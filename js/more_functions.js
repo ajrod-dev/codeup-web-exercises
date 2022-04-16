@@ -97,7 +97,7 @@
         }
         return ("The letter inputted, " + i + ", is NOT a vowel.");
     }
-    console.log(isVowel('b'));
+    console.log(isVowel('A'));
 
 //    Make a function named isConsonant(letter)
     function isConstant(letter){
@@ -108,6 +108,142 @@
         return ("The letter inputted, " + i + ", is a constant.");
     }
     console.log(isConstant('a'));
+
+//  Make a function named isCapital(letter)
+    function isCapital(letter){
+        if (letter == letter.toUpperCase()) {
+            return "The letter inputted, " + letter + ", is a capital letter.";
+        }
+        else {
+            return "The letter inputted, " + letter + ", is NOT a capital letter.";
+        }
+    }
+    console.log(isCapital("A"));
+
+//  Make a function named isLowerCase(letter)
+    function isLowerCase(letter){
+        if (letter == letter.toLowerCase()) {
+            return "The letter inputted, " + letter + ", is a lowercase letter.";
+        }
+        else {
+            return "The letter inputted, " + letter + ", is NOT a lowercase letter.";
+        }
+    }
+    console.log(isLowerCase("A"));
+
+//    Make a function named hasLowerCase(string) that returns if a string has any lower cased letter
+    function hasLowerCase(string){
+        let regex = /[a-z]/;
+            if (string.match(regex) == null) {
+                return "This string, " + string + ", does NOT have a lowercase letter."
+            }
+            else {
+                return "This string, " + string + ", has a lowercase letter."
+        }
+    }
+    console.log(hasLowerCase("STRoNG"));
+
+//    Make a function named isSpace(letter) that returns if a character is a space character
+    function isSpace(letter){
+        let regex = / /;
+        return "It is " + regex.test(letter) + " that the input is a space character.";
+    }
+    console.log(isSpace(" "));
+
+//    Make a function named isZero(number)
+    function isZero(number){
+        if (number === 0){
+            return "The number inputted is zero"
+        } else {
+            return "The number is NOT zero"
+        }
+    }
+    console.log(isZero(0));
+
+//    Make a function named notZero(input) that returns true if the input is not zero
+    function notZero(input){
+        if (input !== 0){
+            return "TRUE: The number inputted is NOT zero"
+        } else {
+            return "FALSE: The number inputted is zero"
+        }
+    }
+    console.log(notZero(1))
+
+//    Write a function named lowerCase(string)
+    function lowerCase(string){
+        return "The string inputted, " + string + ", is now lowercase: " + string.toLowerCase();
+    }
+    console.log(lowerCase("EXAMPLE"));
+
+//    Write a function named double(n) that returns a number times two
+    function double(n){
+        return "The number inputted, " + n + ", is now doubled: " + n * 2;
+    }
+    console.log(double(4));
+
+//    Write a function named triple(n) that returns a number times 3
+    function triple(n){
+        return "The number inputted, " + n + ", is now tripled: " + n * 3;
+    }
+    console.log(triple(4));
+
+//    Write a function named quadruple(n) that returns a number times 4
+    function quadruple(n){
+        return "The number inputted, " + n + ", is now quadrupled: " + n * 4;
+    }
+    console.log(quadruple(4));
+
+//     Write a function named half(n) that returns 1/2 of the provided input
+    function half(n){
+        return "The number inputted, " + n + ", is now halved: " + n / 2;
+    }
+    console.log(half(4));
+
+//    Write a function named subtract(a, b) that returns a minus b
+    function subtract(a, b){
+        return "Problem: " + a + " - " + b + " | Solution: " + (a - b);
+    }
+    console.log(subtract(547, 38));
+
+//    Write a function named multiply(a, b) that returns the product of a times b
+    function multiply(a, b){
+        return "Problem: " + a + " * " + b + " | Solution: " + (a * b);
+    }
+    console.log(multiply(54, 30));
+
+//    Write a function named divide(a, b) that returns a divided by b
+    function divide(a, b){
+        return "Problem: " + a + " / " + b + " | Solution: " + (a / b);
+    }
+    console.log(divide(60, 30));
+
+//    Write a function named remainder(a, b) that returns the remainder after dividing a by b
+    function remainder(a, b){
+        return "The remainder of " + a + " / " + b + " is " + (a % b);
+    }
+    console.log(remainder(90, 32));
+
+//     Write a function named cube(n) that returns n * n * n
+    function cube(n){
+        return "Problem: " + n + "^3 | Solution: " + n**3;
+    }
+    console.log(cube(4));
+
+//    Write a function named squareRoot(n) that returns the square root of the input
+    function squareRoot(n){
+        return "Problem: Square root of " + n +" | Solution: " + Math.sqrt(n);
+    }
+    console.log(squareRoot(25));
+
+//
+
+
+
+
+
+
+
 
 
 

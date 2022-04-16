@@ -62,7 +62,6 @@
     function isTwo(num) {
         return num === 2;
     }
-
     console.log(isTwo(random));
 
 
@@ -81,7 +80,6 @@
     function calculateTip(percentage, total) {
         return (percentage.toFixed(2) * total.toFixed(2));
     }
-
     console.log(calculateTip(0.20, 20));
 
     /**
@@ -113,7 +111,6 @@
     function applyDiscount(originalPrice, discountPercentage) {
         return originalPrice * discountPercentage;
     }
-
     console.log(applyDiscount(100, 0.20));
 
 })();
