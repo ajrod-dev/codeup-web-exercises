@@ -236,11 +236,107 @@
     }
     console.log(squareRoot(25));
 
-//
+//     Write a function named cubeRoot(n) that returns the cube root of the input
+    function cubeRoot(n){
+        return "Problem: Cube root of " + n +" | Solution: " + Math.cbrt(n).toFixed(2);
+    }
+    console.log(cubeRoot(25));
 
+//    Write a function named invertSign(number) that returns a negative version of a positive number, a positive version of negative, and false for all else.
+    function invertSign(number){
+        if (isNaN(number) || number === 0) {
+            return "Status: " + false + ", NaN.";
+        } else {
+            return "Inputted number: " + number + "| Inputted number inverted: " + number * -1;
+        }
+    }
+    console.log(invertSign(0));
 
+//    Write a function named degreesToRadians(number)
+    function degreesToRadians(number) {
+        return "Degrees: "+ number + "| Radians: " + (number * (Math.PI/180));
+    }
+    console.log(degreesToRadians(320));
 
+//    Write a function named radiansToDegrees(number)
+    function radiansToDegrees(number) {
+        return "Radians: "+ number + "| Degrees: " + ((number * 180) / Math.PI);
+    }
+    console.log(radiansToDegrees(6));
 
+//    Make a function named isBlank(input) that determines if a given input is spaces, newline characters, or tabs.
+    function isBlank(input){
+        let regex = /\s/;
+        if(input.match(regex)){
+            return "The input is blank"
+        }
+        else {
+            return "The input is: " + input;
+        }
+    }
+    console.log(isBlank(" "))
+
+//    Make a function named trim(string) that removes empty spaces before and after the input.
+    function trimMe(string){
+        let regex = /a-z/;
+        let spaces = /\s/;
+        if(string.indexOf(0) == " " || string.indexOf(string.length - 1 == " ")) {
+            return "String inputted: \'" + string + "\' | String trimmed: \'" + string.trim() + "\'";
+        }
+    }
+    console.log(trimMe(" Hello World "));
+
+//    Make a function named areEqual(input1, input2) that returns if both inputs have the same value
+    function areEqual(input1, input2){
+        let result = (input1 == input2);
+        if(result == true){
+            return result + ": The values are of equal value "
+        }
+        else {
+            return false + ": The values are NOT of equal value"
+        }
+    }
+    console.log(areEqual("test","tEst"));
+
+//    Make a function named areIdentical(input1, input2) that returns if both inputs are same value and data type.
+    function areIdentical(input1, input2){
+        let result = (input1 === input2);
+        if(result == true){
+            return result + ": The values are of equal value "
+        }
+        else {
+            return false + ": The values are NOT of equal value"
+        }
+    }
+    console.log(areIdentical("2",2));
+
+//    Make a function named not(input) returns the input with a flipped boolean
+    function not(input){
+        if(input == true){
+            return false;
+        }
+        else if (input == false){
+            return true;
+        }
+    }
+    console.log(not(true))
+
+//    Make a function named notNot(input) that the negation of the negation of the input.
+    function notNot(input){
+        if(input == true){
+            return true;
+        }
+        else if (input == false){
+            return false;
+        }
+    }
+    console.log(not(true))
+
+//    Make a function named and(predicate1, predicate2) that returns the logical operation of AND
+    function and(predicate1, predicate2){
+        return "The result of predicate1 AND predicate2 is: " + predicate1 && predicate2;
+    }
+    console.log(and(2, 2));
 
 
 
