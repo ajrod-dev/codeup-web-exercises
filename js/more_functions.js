@@ -334,11 +334,54 @@
 
 //    Make a function named and(predicate1, predicate2) that returns the logical operation of AND
     function and(predicate1, predicate2){
-        return "The result of predicate1 AND predicate2 is: " + predicate1 && predicate2;
+        let result = predicate1 && predicate2;
+        return "The result of predicate1 AND predicate2 is: " + Boolean(result);
     }
-    console.log(and(2, 2));
+    console.log(and(2, "hello"));
 
+//    Make a function named or(predicate1, predicate2) that returns the logical operation of OR
+    function or(predicate1, predicate2){
+        let result = predicate1 || predicate2;
+        return "The result of predicate1 OR predicate2 is: " + Boolean(result);
+    }
+    console.log(or("", "hello"));
 
+//    Write a function called reverseString(string) that reverses a string
+    function reverseString(string){
+        let str = string.split("");
+        let str2 = str.reverse();
+        let str3 = str2.join("")
+        return "Input: " + string + " | Input reversed: " + str3;
+    }
+    console.log(reverseString("Hello World"));
+
+//    Make a function named absoluteValue(number) that returns the absolute value of a number.
+    function absoluteValue(number){
+        return "The absolute value of the input," + number + ", is: " + Math.abs(number);
+    }
+    console.log(absoluteValue(-42));
+
+//    Make a function named rollDice(sides) that takes in an argument containing the number of sides the die should have. Generate a random number between 1 up to and including the number of sides.
+    function rollDice(sides){
+        let rand = (Math.floor(Math.random() * sides) + 1);
+        return "Random number between 1 and " + sides + " is: " + rand;
+    }
+    console.log(rollDice(200));
+
+//    Create a function, willLoginUser() that takes in a username string, password string, user age, a boolean indicating if they are an admin.
+//
+// The function will return true if the username is not the same as the password and the user is at least 18 years old. If the user is an admin, they do not have to be a certain age but the password must still not match the username.
+    function willLoginUser(username, password, age, boolean){
+        if((boolean === true && age < 18) && username.includes(password) !== true){
+            return "status: " + true;
+        }else if((age >= 18) && username.includes(password) !== true ){
+            return "status: " + true;
+        } else {
+            return "status: " + false;
+        }
+
+    }
+    console.log(willLoginUser("master", "admin", 8, false))
 
 
 
