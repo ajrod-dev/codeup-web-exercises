@@ -384,6 +384,86 @@
     console.log(willLoginUser("master", "admin", 8, false))
 
 
+// Create a function that will return how many whitespace characters are at the beginning and end of a string.
+function countWhiteSpaces(str, space) {
+    let count = [];
+    let arr = str.split("");
+    for(let i = 0; i <= arr.length; i++){
+        if(arr[i] === space){
+            count.push(i);
+        }
+    }
+    return ("Total whitespace characters in string: " + count.length)
+
+}
+console.log(countWhiteSpaces("  Hello  ", " "));
+
+
+// Create a function that takes in two string inputs.
+// If the second string input is present in the first, return the first input string with the second input string removed from it.
+// If the second string input is present multiple times in the first, the second string will only be removed where it first occurs in the first string.
+// If the second string input is not present in the first, return the first string as entered in the function.
+    function checkTwoStrings(str1, str2) {
+        if(str1.includes(str2) == true){
+             return str1.replace(str2, "")
+        } else {
+            return str1;
+        }
+    }
+    console.log(checkTwoStrings("afgbobebobhh","bob"))
+
+
+
+
+// Create a function that takes in a string and returns true if the last letter is an "a" (otherwise, return false).
+    function lastLetter(str){
+        return str.charAt(str.length - 1) === 'a'
+    }
+    console.log(lastLetter("hallelujah"));
+
+
+
+// EXTRA CHALLENGE: create a function that will return how many whitespace characters are at the beginning of a string (hint: use regex).
+    function countFrontWhiteSpaces(str, space) {
+        let count = [];
+        let arr = str.split("");
+        for(let i = 0; i < arr.length / 2; i++){
+            if(arr[i] === space){
+                count.push(i);
+            }
+        }
+       return "Whitespace characters in beginning of string: " + count.length;
+    }
+    console.log(countFrontWhiteSpaces("  hello", " "))
+
+// Create a function returnTrueMessage() that returns the string "Hey, it's true!"
+    function returnTrueMessage(str){
+        return "Hey, it's true!";
+    }
+    console.log(returnTrueMessage("They have great classes at Codeup"))
+// Create a function returnMessage() that takes in a function and returns the call to the function
+// Experiement passing in different functions.
+
+    // Write a function called doMath(operator, a, b) that takes 3 parameters. The first parameter is the name of the math function you want to apply. a and b are the two numbers to run that function on.
+    function doMath(func, a, b){
+        return func(a,b);
+    }
+    function addBoth(a,b){
+        return "The result of a + b: " + parseFloat(a + b);
+    }
+    function subtractBoth(a,b){
+        return "The result of a - b: " + parseFloat(a - b);
+    }
+    function multiplyBoth(a,b){
+        return "The result of a * b: " + parseFloat(a * b);
+    }
+    function divideBoth(a,b){
+        return "The result of a / b: " + parseFloat(a / b);
+    }
+
+    console.log(doMath(multiplyBoth, 5, 5));
+
+
 
 
 })();

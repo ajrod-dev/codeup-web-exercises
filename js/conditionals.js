@@ -133,6 +133,8 @@
             return "Congratulations! You have received a promo discount of 50% on your total purchase. Your total is now: $" + ((total - (.50 * total)).toFixed(2));
         } else if (lucky === 5) {
             return "Congratulations! You have received a promo discount of 100% on your total purchase. Your total is now: $0. Enjoy your free gift.";
+        } else {
+            return "ERROR: Lucky number should be between 0 and 5."
         }
     }
 
