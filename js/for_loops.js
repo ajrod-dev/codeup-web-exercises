@@ -17,17 +17,20 @@
     Use a for loop and the code from the previous lessons to generate 10 random numbers between 20 and 200 and output to the console whether each number is odd or even.
      */
 
-    function randomNumbers(){
+    function randomNumber(){
+        return Math.floor(Math.random() * (180) + 20);
+    }
+    function areTheyEvenOrOdd(){
         for(let i = 1; i <= 10; i++){
-            let rand = Math.floor(Math.random() * (200 - 20) + 20)
+            let rand = randomNumber();
             if(rand % 2 === 0 ){
                 console.log(rand + " is even.")
-            } else if (rand % 2 === 1){
+            } else {
                 console.log(rand + " is odd.")
             }
         }
     }
-    console.log(randomNumbers())
+    areTheyEvenOrOdd()
 
     /*
    Create a for loop that uses console.log to create the output shown below.
@@ -44,12 +47,12 @@
 
     function halfPyramid() {
         for (let i = 1; i < 10; i++) {
-            for(let j = 0; j < i; j++){
+            for(let j = 1; j <= i; j++){
                 console.log(i)
             }
         }
     }
-    console.log(halfPyramid())
+    halfPyramid()
 
     /*
     Create a for loop that uses console.log to create a countdown from 100 to 5 counting by 5's
@@ -61,6 +64,5 @@
         }
     }
     countdownByFive();
-
 
 })()
