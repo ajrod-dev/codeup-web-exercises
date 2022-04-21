@@ -34,7 +34,7 @@ Use a loop and the continue statement to output all the odd numbers between 1 an
     // }
 
     // Same function as above but in a 'while' loop
-    function promptNumber(){
+    let promptNumber = function(){
         let input;
         while(true){
             input = prompt("Enter an odd number between 1 and 50: ")
@@ -64,27 +64,7 @@ Use a loop and the continue statement to output all the odd numbers between 1 an
 
     }
 
-  oddNumbers()
-
-    // function outputOddNumbers(){
-    //     let oddNumber = promptNumber();
-    //     console.log("Number to skip is: " + oddNumber)
-    //     for(let i = 0; i < 50; i++){
-    //         if(i % 2 === 1 && i === oddNumber) {
-    //             console.log("Skipping number: " + oddNumber);
-    //             continue;
-    //         } else if (i % 2 === 1 && i !== oddNumber){
-    //             console.log("Here is an odd number: " + i)
-    //         }
-    //     }
-    // }
-    //
-    //
-    // console.log(outputOddNumbers())
-
-
-
-
+  // oddNumbers()
 
 
 })();
