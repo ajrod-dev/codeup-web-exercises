@@ -14,6 +14,7 @@
      * array.
      */
     console.log(fourNames.length);
+    console.log("\n")
     /**
      * TODO:
      * Create log statements that will print each of the names individually by
@@ -23,7 +24,7 @@
     console.log(fourNames[1])
     console.log(fourNames[2])
     console.log(fourNames[3])
-
+    console.log("\n")
     /*
      * TODO:
      * Write some code that uses a for loop to log every item in the names
@@ -32,6 +33,19 @@
     for(let i = 0; i < fourNames.length; i++){
         console.log(fourNames[i])
     }
+    console.log("\n")
+
+    /*
+       TODO:
+       Use a for..of loop
+     */
+    for(let name of fourNames){
+        console.log(name)
+    }
+    console.log("\n")
+
+
+
     /**
      * TODO:
      * Refactor your above code to use a `forEach` loop
@@ -39,6 +53,8 @@
     fourNames.forEach(function (name){
         console.log(name);
     })
+
+    console.log("\n")
     /**
      * TODO:
      * Create the following three functions, each will accept an array and
@@ -68,5 +84,7 @@
     console.log(first(fourNames));
     console.log(second(fourNames));
     console.log(third(fourNames));
+    console.log("\n")
+
 
 })();
