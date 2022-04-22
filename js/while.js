@@ -45,7 +45,6 @@
        customerBought is amount of cones each customer wants to buy(random number).
        Inventory number is started at beginning then follows the if statements to determine if inventory is insufficient or 0.
        Inventory minus cones that customer wants is solved at bottom of function.
-
      */
     function iceCreamSeller(){
         let amount = amountToSell()
