@@ -383,7 +383,6 @@
     }
     console.log(willLoginUser("master", "admin", 8, false))
 
-
 // Create a function that will return how many whitespace characters are at the beginning and end of a string.
 function countWhiteSpaces(str, space) {
     let count = [];
