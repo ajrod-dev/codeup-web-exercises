@@ -149,6 +149,7 @@
      * price before the discount was, and what their price after the discount is.
      */
 // Generate a random number between 0 and 6
+
     let luckyNumber = Math.floor(Math.random() * 6);
 
     function cashier() {
