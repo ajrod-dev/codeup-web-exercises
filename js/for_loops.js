@@ -64,4 +64,32 @@
     countdownByFive();
 
 
+    /*
+    Create a function that will replace every other letter of a string with a “Z”. (example: replaceLettersWithZ(“javascript”) // returns “jZvZsZrZpZ”;) This can be accomplished with a for loop,
+    */
+
+    function replaceLettersWithZ(str){
+        let newStr = str;
+        for(let i = 1; i < str.length; i+=2){
+            newStr = newStr.replace(str.charAt(i), 'Z')
+
+        }
+        return newStr
+    }
+    console.log(replaceLettersWithZ('javascript'))
+
+
+    /*
+    Create a function to display a message of the factorial of a number. (example: factorial(4) // returns “1 * 2 * 3 * 4 = 24";)
+     */
+
+    function factorial(n){
+        let i = 1;
+        while(i <= n){
+            i++
+
+        }
+    }
+    factorial(4)
+
 })()
