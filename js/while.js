@@ -41,7 +41,12 @@
     let conesBought = function(){
         return Math.floor((Math.random() * (6 - 1) + 1));
     }
-    // Main function
+    /* Main function - amountToSell is the inventory(random number).
+       customerBought is amount of cones each customer wants to buy(random number).
+       Inventory number is started at beginning then follows the if statements to determine if inventory is insufficient or 0.
+       Inventory minus cones that customer wants is solved at bottom of function.
+
+     */
     function iceCreamSeller(){
         let amount = amountToSell()
         let customerBought;
@@ -53,7 +58,8 @@
             }
             else if(amount === 0){
                 console.log("Yay, I sold all cones");
-            } else {
+            }
+            else {
                 amount -= customerBought
                 console.log(customerBought + " cones sold. " + amount + " cones left.")
             }
