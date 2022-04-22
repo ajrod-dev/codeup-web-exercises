@@ -83,13 +83,32 @@
     Create a function to display a message of the factorial of a number. (example: factorial(4) // returns “1 * 2 * 3 * 4 = 24";)
      */
 
+    // function factorial(n){
+    //         if(n === 0 || n === 1){
+    //             return 1
+    //         }
+    //         else if(n < 0){
+    //             return -1
+    //         }
+    //         else {
+    //             return (n * factorial(n - 1))
+    //         }
+    // }
     function factorial(n){
-        let i = 1;
-        while(i <= n){
-            i++
-
+        let answer = n;
+        if(n === 0 || n === 1){
+          return 1
         }
+        else if(n < 0){
+            return -1;
+        }
+        while(n > 1){
+            n--;
+            answer *= n;
+        }
+        return answer;
     }
-    factorial(4)
 
+    // console.log("The factorial of "+ n + " is: " + factorial(4))
+console.log("The factorial of the number inputted is " + factorial(6))
 })()
