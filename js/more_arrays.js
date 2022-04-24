@@ -183,4 +183,55 @@ console.log(allIndexesOf(fruits, 'apple'));
     }
     console.log(getShortestString(games));
 
+    // Exercise 4. Write a function named addTwoArrays that takes in two, one dimensional arrays. The function should return a single array containing all of the elements of the first array along with all of the elements of the second array
+    // Example: addTwoArrays([1, 2, 3], [4, 5, 6]) should return [1, 2, 3, 4, 5, 6]
+    let arr1 = [1, 2, 3]
+    let arr2 = [4, 5, 6]
+
+    function addTwoArrays(arr1, arr2){
+        let newArr = arr1.concat(arr2)
+        console.log(newArr)
+    }
+    addTwoArrays(arr1, arr2)
+
+    // Exercise 5. Write a function named getUniqueValues that takes in an array and returns the array without any duplicates
+    // Example: getUniqueValues(["a", "b", "a", "b", "c", "c"]) should return ["a", "b", "c"]
+
+    let duplicates = ["a", "b", "b", "z", "a", "t", "l", "l", "z", "b", "c", "c"];
+
+    function getUniqueValues(arr) {
+        let result = [];
+        let set = new Set();
+        arr.forEach(function (el, i ,arr) {
+            set.add(el);
+        })
+        set.forEach(function (el) {
+            result.push(el)
+        })
+        return result;
+    }
+    console.log("Removed duplicates")
+    console.log(duplicates)
+    console.log(getUniqueValues(duplicates));
+
+    // Exercise 6. Write a function named reverseArray that takes in an array and returns it reversed, but without altering the original array.
+    let revArr = ['a','b','c','d','e']
+
+    function reverseArray(arr){
+        let result = arr.reverse();
+        return result;
+    }
+    console.log("Reversed Array")
+    console.log(reverseArray(revArr))
+
+
+//   Exercise 7. Write a function named getRandomQuote().
+//   Inside of the function, create an array of strings where each string is a quote or thought you find    inspirational
+//   getRandomQuote should generate a random number between 0 and the array's length minus 1
+//   use the randomly generated number as your index
+//   return a random quote.
+
+
+
+
 })()
