@@ -128,6 +128,12 @@
      *      ...
      */
 
+    // for(let book of books){
+    //     console.log("Book # " + (books.indexOf(book) + 1) + "\n")
+    //     console.log("Title: " + book.title + "\n")
+    //     console.log("Author: " + book.author.firstName + " " + book.author.lastName+ "\n")
+    //     console.log("- - - ")
+    // }
 
     /**
      * Bonus:
