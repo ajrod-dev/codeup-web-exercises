@@ -21,11 +21,11 @@
     console.log('<br> Tags: ')
 
     // Joining elements in an array to make string with <br> in between words
-    let newStr = planetsArray.join("<br> <br>")
+    let newStr = planetsArray.join("</br> <br>")
     // Splitting the string with a whitespace separator, making into an array
     let newArr = newStr.split(" ")
     // Pushing and un-shifting a <br> to front and end of array
-    newArr.push("<br>")
+    newArr.push("</br>")
     newArr.unshift("<br>")
     // Final result
     let final = newArr.join("")

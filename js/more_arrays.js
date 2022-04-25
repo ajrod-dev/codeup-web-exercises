@@ -257,9 +257,17 @@ console.log(allIndexesOf(fruits, 'apple'));
     // Example: getIndexesOf("a", "banana") should return the array [1, 3, 5]
     // Example: getIndexesOf("z", "banana") should return an empty array [] since there are no "z" characters in "banana"
 
-    function geTIndexesOf(arg1, arg2){
+    function geTIndexesOf(char, str){
+        let result = []
+        for(let i = 0; i < str.length; i++){
+           if(str.charAt(i) === char){
+               result.push(str.indexOf(char))
+           }
 
+        }
+        return result;
     }
+    console.log(geTIndexesOf('a', 'banana'))
 
 
 
