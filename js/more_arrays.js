@@ -231,6 +231,36 @@ console.log(allIndexesOf(fruits, 'apple'));
 //   use the randomly generated number as your index
 //   return a random quote.
 
+    function getRandomQuote(){
+        let arr = ['When you have something to say, silence is a lie',
+            'If you fulfill your obligations everyday, you don’t need to worry about the future.',
+            'It took untold generations to get you where you are. A little gratitude might be in order.',
+            'You’re going to pay a price for every bloody thing you do and everything you don’t do.',
+            'Women select men. That makes them nature, because nature is what selects.',
+            'If you think tough men are dangerous, wait until you see what weak men are capable of.']
+
+        let randomNum = Math.floor(Math.random() * (arr.length - 1)  + 1)
+        let quote = '';
+        for(let i of arr){
+            quote = arr[randomNum]
+        }
+        return "Random quote: => " + quote;
+    }
+
+    console.log((getRandomQuote()));
+
+
+    // Exercise 8. Write a function named getIndexesOf() that takes in two arguments.
+    // The first argument should be a specific numeral or character
+    // The second argument should be any given string
+    // getIndexesOf() should return an array containing all of the indexes of that character in the string
+    // Example: getIndexesOf("a", "banana") should return the array [1, 3, 5]
+    // Example: getIndexesOf("z", "banana") should return an empty array [] since there are no "z" characters in "banana"
+
+    function geTIndexesOf(arg1, arg2){
+
+    }
+
 
 
 
