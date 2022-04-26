@@ -1003,7 +1003,7 @@
     let profileReport = {
 
         getProfileCount: function () {
-            return "Profile Count: " + profiles.length;
+            return profiles.length;
         },
 
         getActiveCount: function () {
@@ -1041,14 +1041,21 @@
             totalArr.forEach(function(el){
                 sum += el
             })
-            return "Sum of all balances: $" + sum;
+            return sum;
 
         },
 
         getAverageBalance: function () {
-
+            let sum = this.sumOfAllBalances();
+            let count = this.getProfileCount();
+            return ((sum / count).toFixed(2))
         },
-        // getLowestBalance,
+
+        getLowestBalance: function () {
+            profiles.forEach(function (el, i , profiles) {
+
+            })
+        }
         // getHighestBalance,
         // getMostFavoriteFruit,
         // getLeastFavoriteFruit,
@@ -1064,11 +1071,13 @@
     }
 
 
-    console.log(profileReport.getProfileCount())
+    console.log("Profile Count: " + profileReport.getProfileCount())
     console.log(profileReport.getActiveCount())
     console.log(profileReport.getInactiveCount())
     console.log(profileReport.getInactiveCount())
-    console.log(profileReport.sumOfAllBalances());
+    console.log("Sum of all balances: $" + profileReport.sumOfAllBalances());
+    console.log("Average of balances is: $" + profileReport.getAverageBalance());
+
 
 
 })()
