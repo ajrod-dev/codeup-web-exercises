@@ -1002,6 +1002,23 @@
 
     let profileReport = {
 
+        getProfilesInArr: function(){
+        let balanceTotalStr = 0;
+        let arr = [];
+        let totalArr = [];
+            profiles.forEach(function (el) {
+                balanceTotalStr += el.balance;
+                arr = balanceTotalStr.split('$')
+            })
+            arr.forEach(function (el) {
+                arr = el.replace(/,/g, '')
+                totalArr.push(parseFloat(arr))
+            })
+            totalArr.shift();
+            return totalArr
+        },
+
+
         getProfileCount: function () {
             return profiles.length;
         },
@@ -1025,24 +1042,13 @@
             return "Inactive count: " + inactiveTotal;
         },
 
-        sumOfAllBalances: function () {
-            let balanceTotalStr = 0;
+        sumOfAllBalances: function (arr) {
             let sum = 0;
-            let arr;
-            let totalArr = []
-            profiles.forEach(function (el) {
-                balanceTotalStr += el.balance;
-                arr = balanceTotalStr.split('$')
-            })
-            arr.forEach(function (el) {
-                arr = el.replace(/,/g, '')
-                totalArr.push(parseFloat(arr))
-            })
-            totalArr.forEach(function(el){
+            let arr1 = profileReport.getProfilesInArr()
+            arr1.forEach(function(el){
                 sum += el
             })
             return sum;
-
         },
 
         getAverageBalance: function () {
@@ -1051,12 +1057,14 @@
             return ((sum / count).toFixed(2))
         },
 
-        getLowestBalance: function () {
-            profiles.forEach(function (el, i , profiles) {
+        getLowestBalance: function (arr) {
+            let arr1 = profileReport.getProfilesInArr();
+            return Math.min(...arr1)
+        },
 
-            })
-        }
-        // getHighestBalance,
+        getHighestBalance: function () {
+
+        },
         // getMostFavoriteFruit,
         // getLeastFavoriteFruit,
         // getTotalNumberOfUnreadMessages,
@@ -1070,13 +1078,15 @@
 
     }
 
-
+    console.log("Array of balances" + "\n")
+    console.log(profileReport.getProfilesInArr())
     console.log("Profile Count: " + profileReport.getProfileCount())
     console.log(profileReport.getActiveCount())
     console.log(profileReport.getInactiveCount())
     console.log(profileReport.getInactiveCount())
     console.log("Sum of all balances: $" + profileReport.sumOfAllBalances());
     console.log("Average of balances is: $" + profileReport.getAverageBalance());
+    console.log("Lowest balance: $" + profileReport.getLowestBalance())
 
 
 
