@@ -1089,7 +1089,6 @@
     console.log("Profile Count: " + profileReport.getProfileCount())
     console.log(profileReport.getActiveCount())
     console.log(profileReport.getInactiveCount())
-    console.log(profileReport.getInactiveCount())
     console.log("Sum of all balances: $" + profileReport.sumOfAllBalances());
     console.log("Average of balances is: $" + profileReport.getAverageBalance());
     console.log("Lowest balance: $" + profileReport.getLowestBalance())
