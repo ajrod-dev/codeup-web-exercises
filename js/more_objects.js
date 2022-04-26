@@ -1002,7 +1002,7 @@
 
     let profileReport = {
 
-        getProfilesInArr: function(){
+        getBalancesInArr: function(){
         let balanceTotalStr = 0;
         let arr = [];
         let totalArr = [];
@@ -1044,7 +1044,7 @@
 
         sumOfAllBalances: function (arr) {
             let sum = 0;
-            let arr1 = profileReport.getProfilesInArr()
+            let arr1 = profileReport.getBalancesInArr()
             arr1.forEach(function(el){
                 sum += el
             })
@@ -1057,15 +1057,21 @@
             return ((sum / count).toFixed(2))
         },
 
-        getLowestBalance: function (arr) {
-            let arr1 = profileReport.getProfilesInArr();
-            return Math.min(...arr1)
+        getLowestBalance: function () {
+            let arr = profileReport.getBalancesInArr();
+            return Math.min(...arr)
         },
 
         getHighestBalance: function () {
-
+            let arr = profileReport.getBalancesInArr();
+            return Math.max(...arr);
         },
-        // getMostFavoriteFruit,
+
+        getMostFavoriteFruit: function(){
+            profiles.reduce((val) => {
+
+            })
+        },
         // getLeastFavoriteFruit,
         // getTotalNumberOfUnreadMessages,
         // getAverageNumberOfUnreadMessages,
@@ -1079,7 +1085,7 @@
     }
 
     console.log("Array of balances" + "\n")
-    console.log(profileReport.getProfilesInArr())
+    console.log(profileReport.getBalancesInArr())
     console.log("Profile Count: " + profileReport.getProfileCount())
     console.log(profileReport.getActiveCount())
     console.log(profileReport.getInactiveCount())
@@ -1087,6 +1093,8 @@
     console.log("Sum of all balances: $" + profileReport.sumOfAllBalances());
     console.log("Average of balances is: $" + profileReport.getAverageBalance());
     console.log("Lowest balance: $" + profileReport.getLowestBalance())
+    console.log("Highest balance: $" + profileReport.getHighestBalance())
+
 
 
 
