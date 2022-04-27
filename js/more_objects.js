@@ -1068,10 +1068,35 @@
         },
 
         getMostFavoriteFruit: function(){
-            profiles.reduce((val) => {
-
+            let arr = []
+            let banana = 0;
+            let apple = 0;
+            let strawberry = 0;
+            profiles.forEach((el) => {
+                arr.push(el.favoriteFruit)
             })
+
+            arr.forEach((el, i, arr) => {
+               if(el === "banana"){
+                    ++banana;
+
+               } else if(el === 'apple'){
+                   ++apple;
+
+               }else {
+                   ++strawberry;
+
+               }
+            })
+            console.log("Banana count: " + banana)
+            console.log("Apple count: " + apple)
+            console.log("Strawberry count: " + strawberry)
+
+
+
         },
+
+
         // getLeastFavoriteFruit,
         // getTotalNumberOfUnreadMessages,
         // getAverageNumberOfUnreadMessages,
@@ -1093,7 +1118,7 @@
     console.log("Average of balances is: $" + profileReport.getAverageBalance());
     console.log("Lowest balance: $" + profileReport.getLowestBalance())
     console.log("Highest balance: $" + profileReport.getHighestBalance())
-
+    profileReport.getMostFavoriteFruit()
 
 
 
