@@ -1225,4 +1225,30 @@
     console.log(profileReport.getMostCommonEyeColor());
     console.log("Active vs. Inactive balances")
     console.log(profileReport.getBalancesForActiveAndNonActive());;
+
+    // Exercise 6. Practice with assignment by reference.
+// Create a variable named person1 with a name property. Assign it a name property.
+// Now create a variable named person2 and assign person1 to it.
+// Then reassign the name property on person2 with person2.name = "Bob";
+// console.log the name property on person 1.
+// Why do you think changing person2 altered person1?
+// The term for this behavior is assignment by reference.
+
+    let person1 = {name: 'Alex'}
+    let person2 = person1;
+
+    console.log("Before")
+
+    console.log(person1)
+    console.log(person2)
+    console.log("After")
+
+    person2.name = "Bob"
+    console.log(person1)
+    console.log(person2)
+
+
+
+
+
 })()
