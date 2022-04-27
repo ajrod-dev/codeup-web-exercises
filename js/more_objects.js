@@ -1030,19 +1030,13 @@
                     activeTotal += 1;
                 }
             })
-            return "Active count: " + activeTotal;
+            return activeTotal;
         },
         getInactiveCount: function () {
-            let inactiveTotal = 0;
-            profiles.forEach(function (el) {
-                if (el.isActive === false) {
-                    inactiveTotal += 1;
-                }
-            })
-            return "Inactive count: " + inactiveTotal;
+            return this.getProfileCount() - this.getActiveCount()
         },
 
-        sumOfAllBalances: function (arr) {
+        sumOfAllBalances: function () {
             let sum = 0;
             let arr1 = profileReport.getBalancesInArr()
             arr1.forEach(function(el){
@@ -1068,43 +1062,144 @@
         },
 
         getMostFavoriteFruit: function(){
-            let arr = []
             let banana = 0;
             let apple = 0;
             let strawberry = 0;
             profiles.forEach((el) => {
-                arr.push(el.favoriteFruit)
-            })
-
-            arr.forEach((el, i, arr) => {
-               if(el === "banana"){
+                if(el.favoriteFruit === "banana"){
                     ++banana;
-
-               } else if(el === 'apple'){
-                   ++apple;
-
-               }else {
-                   ++strawberry;
-
-               }
+                } else if(el.favoriteFruit === 'apple'){
+                    ++apple;
+                }else {
+                    ++strawberry;
+                }
             })
-            console.log("Banana count: " + banana)
-            console.log("Apple count: " + apple)
-            console.log("Strawberry count: " + strawberry)
-
-
-
+            if(banana > apple && banana > strawberry){
+                return "Banana is the most fav. fruit"
+            }else if (apple > banana && apple > strawberry){
+                return "Apple is the most fav. fruit"
+            }
+            return "Strawberry is the most fav. fruit"
         },
 
+        getLeastFavoriteFruit: function (){
+            let banana = 0;
+            let apple = 0;
+            let strawberry = 0;
+            profiles.forEach((el) => {
+                if(el.favoriteFruit === "banana"){
+                    ++banana;
+                } else if(el.favoriteFruit === 'apple'){
+                    ++apple;
+                }else {
+                    ++strawberry;
+                }
+            })
+            if(banana < apple && banana < strawberry){
+                return "Banana is the least fav. fruit"
+            }else if (apple < banana && apple < strawberry){
+                return "Apple is the least fav. fruit"
+            }
+            return "Strawberry is the least fav. fruit"
+        },
 
-        // getLeastFavoriteFruit,
-        // getTotalNumberOfUnreadMessages,
-        // getAverageNumberOfUnreadMessages,
-        // getAverageAge,
-        // getGenderCounts,
-        // getAllCompanyNames,
-        // getMostCommonEyeColor,
-        // getBalancesForActiveAndNonActive
+        getTotalNumberOfUnreadMessages: function (){
+            let total = 0;
+            let matches = []
+            let str = ""
+            profiles.forEach((el) => {
+                str = el.greeting.match(/(\d+)/g);
+                matches.push(str)
+            })
+            matches = matches.flat()
+            matches.forEach(function (el) {
+                total += parseFloat(el)
+            })
+            return total;
+        },
+        getAverageNumberOfUnreadMessages: function(){
+            let profileNum = this.getProfileCount();
+            let unreadMessages = this.getTotalNumberOfUnreadMessages()
+            return parseInt(unreadMessages / profileNum)
+    },
+        getAverageAge: function(){
+            let totalAge = 0;
+            let profNum = this.getProfileCount();
+            profiles.forEach(function (el) {
+                totalAge += parseInt(el.age)
+            })
+            return parseInt(totalAge / profNum)
+        },
+
+        getGenderCounts: function(){
+            let genderCount = {m: 0, f: 0}
+            profiles.forEach((el) => {
+                if(el.gender === 'male'){
+                    genderCount.m += 1
+                }else if(el.gender === 'female'){
+                    genderCount.f += 1
+                }
+            })
+            return genderCount
+        },
+
+        getAllCompanyNames: function (){
+            let companyNames = [];
+            profiles.forEach(function (el) {
+                companyNames.push(el.company)
+            })
+            return companyNames
+        },
+
+        getMostCommonEyeColor: function (){
+            let eyeColors = []
+            let blueEyes = 0;
+            let greenEyes = 0;
+            let brownEyes = 0;
+            profiles.forEach(function (el) {
+                eyeColors.push(el.eyeColor)
+            })
+            for(const color of eyeColors){
+                if(color === "blue"){
+                    ++blueEyes
+                }else if(color === "green"){
+                    ++greenEyes
+                }else if(color === "brown"){
+                    ++brownEyes
+                }
+            }
+            if(blueEyes > greenEyes && blueEyes > brownEyes){
+                return "Blue eyes are the most common eye color"
+            }else if(greenEyes > blueEyes && greenEyes > brownEyes){
+                return "Green eyes are the most common eye color"
+            }else {
+                return "Brown Eyes are the most common eye color"
+            }
+        },
+
+        getBalancesForActiveAndNonActive: function(){
+            let active = []
+            let inactive = []
+            let balances = {"active-balances": 0, "inactive-balances": 0}
+            profiles.forEach((el) => {
+                if(el.isActive === true){
+                    active.push(el.balance)
+                }else {
+                    inactive.push(el.balance)
+                }
+            })
+            for(let i in active){
+                active[i] = parseFloat(active[i].replace(/[$\,]/g, ""))
+                balances["active-balances"] += active[i]
+            }
+            balances["active-balances"] = parseFloat(balances["active-balances"].toFixed(2))
+            for(let i in inactive){
+                inactive[i] = parseFloat(inactive[i].replace(/[$\,]/g, ""))
+                balances["inactive-balances"] += inactive[i]
+            }
+            balances["inactive-balances"] = parseFloat(balances["inactive-balances"].toFixed(2))
+            return balances;
+        }
 
 
     }
@@ -1112,14 +1207,22 @@
     console.log("Array of balances" + "\n")
     console.log(profileReport.getBalancesInArr())
     console.log("Profile Count: " + profileReport.getProfileCount())
-    console.log(profileReport.getActiveCount())
-    console.log(profileReport.getInactiveCount())
+    console.log("Active count: " + profileReport.getActiveCount())
+    console.log("Inactive count: " + profileReport.getInactiveCount())
     console.log("Sum of all balances: $" + profileReport.sumOfAllBalances());
     console.log("Average of balances is: $" + profileReport.getAverageBalance());
     console.log("Lowest balance: $" + profileReport.getLowestBalance())
     console.log("Highest balance: $" + profileReport.getHighestBalance())
-    profileReport.getMostFavoriteFruit()
-
-
-
+    console.log(profileReport.getMostFavoriteFruit())
+    console.log(profileReport.getLeastFavoriteFruit())
+    console.log("Total # of unread messages: " + profileReport.getTotalNumberOfUnreadMessages());
+    console.log("Average # of unread messages per user: " + profileReport.getAverageNumberOfUnreadMessages())
+    console.log("Average age of employees: " + profileReport.getAverageAge());
+    console.log("Gender Count: ")
+    console.log(profileReport.getGenderCounts());
+    console.log("All Company Names: ")
+    console.log(profileReport.getAllCompanyNames());
+    console.log(profileReport.getMostCommonEyeColor());
+    console.log("Active vs. Inactive balances")
+    console.log(profileReport.getBalancesForActiveAndNonActive());;
 })()
