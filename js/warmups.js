@@ -1,6 +1,6 @@
 "use strict";
 
-console.log("Yay! I completed the warm-up!");
+// console.log("Yay! I completed the warm-up!");
 
     /* Fizzbuzz - Between 1 - 100
         - Log every iteration
@@ -23,4 +23,21 @@ console.log("Yay! I completed the warm-up!");
             }
         }
     }
-    fizzBuzz()
+    // fizzBuzz()
+
+    //  Write a function that takes in an array of strings and returns a string of the first letter of each element concatenated together
+
+    // test array
+    let arr = ['dog', 'cat', 'frog', 'bat']
+
+    function stringOfLetters(arr){
+        let result = ""; // created the string to show final result
+        arr.forEach((el) => { // forEach method will get each character at index: 0 for each element in array
+           result += el.charAt(0) // concatenate the character onto 'final result' string
+        })
+        return result;
+    }
+
+    console.log(stringOfLetters(arr));
+
+
