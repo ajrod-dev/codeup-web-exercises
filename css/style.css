@@ -1,3 +1,111 @@
 .fancy-header{
-    color: deepskyblue;
+    color: ghostwhite;
+    text-align: center;
 }
+p {
+    color: ghostwhite;
+    text-align: center;
+}
+
+h1, h3{
+    color: ghostwhite;
+    text-decoration: underline;
+    font-family: blade_runner_movie_fontRg, sans-serif;
+
+}
+
+h2 {
+    font-family: blade_runner_movie_fontRg, sans-serif;
+    text-decoration: underline;
+    color: ghostwhite;
+
+}
+
+head, body {
+    background-color: rgba(200,100,0,.5);
+}
+
+head, body {
+    background: url("https://media.niftygateway.com/video/upload/w_20,e_blur:500/q_auto:good,w_500/v1610493693/A/TomYoo/1._Back_to_the_Future_x_Nike_Mag_Floating_Mag_Hoverboard_dj67a7.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-blend-mode: multiply;
+}
+
+.lefty {
+    list-style-type: lower-roman;
+    font-family: "Helvetica Neue", sans-serif;
+    color: ghostwhite;
+    margin-left: 150px;
+}
+
+.middle {
+    list-style-type: lower-roman;
+    font-family: "Helvetica Neue", sans-serif;
+    color: ghostwhite;
+    margin-left: 550px;
+
+}
+
+.righty {
+    list-style-type: lower-roman;
+    font-family: "Helvetica Neue", sans-serif;
+    color: ghostwhite;
+    margin-left: 900px;
+
+}
+
+.center{
+    color:ghostwhite;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#top {
+    text-decoration-color: ghostwhite;
+}
+
+a:visited{
+    color: gold;
+}
+
+a:link {
+    text-decoration-color: ghostwhite;
+
+}
+
+a:hover {
+    text-decoration-color: khaki;
+}
+a:checked {
+    text-decoration-color: gold;
+}
+
+#company-vision{
+    text-align: center;
+}
+
+#product-header{
+    text-align: center;
+}
+
+
+img.left-pic {
+    align-content: center;
+    margin-left: 200px;
+}
+
+@font-face {
+    font-family: 'blade_runner_movie_fontRg';
+    src: url("fonts/bladrmf_-webfont.eot");
+    src: url("fonts/bladrmf_-webfont.woff") format("woff"),
+    url("fonts/bladrmf_-webfont.svg") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
