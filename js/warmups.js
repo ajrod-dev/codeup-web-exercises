@@ -41,3 +41,10 @@
     console.log(stringOfLetters(arr));
 
 
+    // Function that takes in a string and returns that string in alphabetical order.
+
+    function alphabetize(str){
+       return str.toLowerCase().split("").sort().join("");
+
+    }
+    console.log(alphabetize("CoDeUp"))

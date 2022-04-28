@@ -6,7 +6,7 @@
 </head>
 <body>
 <!--Create an empty form element. We will be adding to this throughout the exercise.-->
-<form method="POST" action="https://request-inspector.glitch.me/">
+<form method="GET" action="https://request-inspector.glitch.me/">
 <!--    Create text fields for email and password with appropriate placeholder values.-->
 
     <input id="email" name="email" type="text" placeholder="Enter email">
@@ -14,12 +14,13 @@
 
     <input id="password" name="password" type="text" placeholder="Enter password">
     <label for="password">Password</label><br><br>
-
 <!--    Create a textarea named "bio". This is for the user to fill out a short description of themselves.-->
+
     <label for="bio">Bio</label><br>
     <textarea id="bio" name="bio" placeholder="Fill out a short description of yourself." rows="8" cols="20"></textarea><br><br>
     <input type="submit"><br>
     <hr>
+<!--    Create a "How did you hear about us" section that contains radio buttons. The values should be "billboard", "radio advertisement", "internet advertisement", and "other". Only one of the values should be allowed to be selected at a time.-->
 
     <h3>How Did You Hear About Us?</h3>
     <input type="radio" id="billboard" name="how-did-you-hear_about" value="billboard">
@@ -31,6 +32,7 @@
     <input type="radio" id="other" name="how-did-you-hear_about" value="other">
     <label for="other">Other</label><br>
     <input type="submit"><br><br><br>
+<!--    Create a dropdown that asks the user what web browser they are using.-->
 
     <label for="browser">What Is Your Favorite Browser?</label><br>
     <select id="browser" name="browser" >

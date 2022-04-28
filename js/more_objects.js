@@ -1258,8 +1258,7 @@
 // See how both the "input" and "textInput" variables are referencing the same underlying HTML element?
 // This behavior is another example of "assignment by reference"
 
-    let input = document.getElementById("input")
-   let inputElement = document.getElementById("input")
+
 
     let dog = {
         breed: 'German Shepherd',
