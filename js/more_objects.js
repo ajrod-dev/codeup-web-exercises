@@ -1247,7 +1247,53 @@
     console.log(person1)
     console.log(person2)
 
+// Exercise 7. More practice with assignment by reference.
+// Add the following HTML to your index.html page in this project.
+// <input type="text" id="input" name="input">
+// now, create a variable named input and assign it document.getElementById("input").
+// now run input.value = "Hello" from the JS console. Did you see any HTML change?
+// Create a second variable named inputElement.
+// var inputElement = document.getElementById("input");
+// now, run inputElement.value = "I am altering an object by altering its properties" in your JS console.
+// See how both the "input" and "textInput" variables are referencing the same underlying HTML element?
+// This behavior is another example of "assignment by reference"
 
+    let input = document.getElementById("input")
+   let inputElement = document.getElementById("input")
+
+    let dog = {
+        breed: 'German Shepherd',
+        weightInPounds: 80,
+        age: 3,
+        color: 'black',
+        sterilized: true,
+        shotRecords: [{
+            date: new Date(),
+            typeOfShot: 'rabies'
+        },
+            {date: new Date(),
+            typeOfShot: 'hepatitis'}],
+        bark: function (){
+            console.log("Woof!")
+            },
+        getOlder: function (){
+            this.age += 1;
+        },
+        fix: function (){
+            this.sterilized = true;
+        },
+        vaccinate: function (shot){
+            this.shotRecords.date = new Date()
+            this.shotRecords.typeOfShot = shot
+        }
+    }
+
+    console.log(dog)
+    dog.fix()
+    dog.getOlder()
+    dog.bark()
+    dog.vaccinate('canine parvovirus')
+    console.log(dog)
 
 
 
