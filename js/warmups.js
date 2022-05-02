@@ -48,3 +48,16 @@
 
     }
     console.log(alphabetize("CoDeUp"))
+
+
+    // Write a function that takes in an array of numbers and returns the sum of all elements.
+    let arrayOfNums = [1,5,10,4];
+
+    function sumOfAll(arr){
+        let result = 0;
+        for(let i of arr){
+            result += i
+        }
+        return result
+    }
+    console.log(sumOfAll(arrayOfNums))
