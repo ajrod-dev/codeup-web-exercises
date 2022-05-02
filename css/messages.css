@@ -10,6 +10,7 @@ body, html {
     border-radius: 5px;
     padding: .5em;
     margin: 8px;
+    border: 1px solid grey
 }
 
 .message-info {
