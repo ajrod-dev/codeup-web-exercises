@@ -61,3 +61,52 @@
         return result
     }
     console.log(sumOfAll(arrayOfNums))
+
+/*
+Create a function, returnProductEssentialDetails, that takes in a product object and returns a simpler product object containing only the product name and price in cents.
+
+Examples...
+ */
+
+
+let product1 = {
+    name: 'Hammar',
+    priceInCents: 400,
+    description: 'It is a a hammar.',
+    inventory: 25034
+}
+
+let product2 = {
+    name: 'Computer',
+    priceInCents: 40000,
+    description: 'It is a computer.',
+    inventory: 33000
+}
+
+let product3 = {
+    name: 'Ruler',
+    priceInCents: 1000,
+    description: 'It is a ruler.',
+    inventory: 2200
+}
+
+    function returnProductEssentialDetails(Object){
+        let obj = {};
+        obj.name = Object.name;
+        obj.priceInCents = Object.priceInCents;
+        return obj;
+    }
+
+    let arrayOfObjs = [product1,product2, product3]
+
+    function returnAllProductEssentialDetails(array){
+        let result = [];
+        for(const el of array) {
+            result.push(returnProductEssentialDetails(el))
+        }
+        return result
+    }
+
+    console.log(returnProductEssentialDetails(product3))
+    console.log(returnAllProductEssentialDetails(arrayOfObjs))
+
