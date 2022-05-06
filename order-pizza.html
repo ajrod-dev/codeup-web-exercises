@@ -44,92 +44,180 @@
     </div>
     <h2>Build your own pizza!</h2>
 <!--        Tabs to customize pizza-->
-        <ul class="nav nav-tabs" >
-            <li class="nav-item">
-                <a href="#size-and-crust-tab" class="nav-link active" data-toggle="tab">
-                    <span class="badge bg-secondary rounded-pill">1</span>Size and Crust
-                </a>
-            </li>
-            <li class="nav-item" >
-                <a href="#cheese-and-sauce-tab" class="nav-link" data-toggle="tab">
-                    <span class="badge bg-secondary rounded-pill">2</span>Cheese and Sauce
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="#toppings" class="nav-link" data-toggle="tab">
-                    <span class="badge bg-secondary rounded-pill">3</span>Toppings
-                </a>
-            </li>
-        </ul>
-<!--    Cards for Customization of pizza-->
-<div class="tab-content">
-        <div class="card d-grid gap-3 tab-pane show fade active" id="size-and-crust-tab">
+<!--        <ul class="nav nav-tabs" >-->
+<!--            <li class="nav-item">-->
+<!--                <a href="#size-and-crust-tab" class="nav-link active" data-toggle="tab">-->
+<!--                    <span class="badge bg-secondary rounded-pill">1</span>Size and Crust-->
+<!--                </a>-->
+<!--            </li>-->
+<!--            <li class="nav-item" >-->
+<!--                <a href="#cheese-and-sauce-tab" class="nav-link" data-toggle="tab">-->
+<!--                    <span class="badge bg-secondary rounded-pill">2</span>Cheese and Sauce-->
+<!--                </a>-->
+<!--            </li>-->
+<!--            <li class="nav-item">-->
+<!--                <a href="#toppings" class="nav-link" data-toggle="tab">-->
+<!--                    <span class="badge bg-secondary rounded-pill">3</span>Toppings-->
+<!--                </a>-->
+<!--            </li>-->
+<!--        </ul>-->
+
+            <!--Nav tabs under "Build your own pizza"-->
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="size-tab" data-bs-toggle="tab" data-bs-target="#size-and-crust-tab" type="button" role="tab" aria-controls="home" aria-selected="true"><span class="badge bg-secondary rounded-pill">1</span>Size and Crust</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="cheese-tab" data-bs-toggle="tab" data-bs-target="#cheese-and-sauce-tab" type="button" role="tab" aria-controls="profile" aria-selected="false"><span class="badge bg-secondary rounded-pill">2</span>Cheese and Sauce</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="top-tab" data-bs-toggle="tab" data-bs-target="#toppings-tab" type="button" role="tab" aria-controls="contact" aria-selected="false"><span class="badge bg-secondary rounded-pill">3</span>Toppings</button>
+    </li>
+</ul>
+                    <!--  Tab content div for all 3 tabs-->
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="size-and-crust-tab" role="tabpanel" aria-labelledby="size-tab">
+        <div class="card d-grid gap-3">
             <div class="card bg-primary text-white">
-             <div id="size-and-crust-card" class="card-body"> <!--   Card for description of choices-->
+                <div class="card-body">
                     Choose Size and Crust.
                 </div>
             </div>
-            <div class="m-3 card">
-            <div class="card-header">
-                Hand Tossed
-            </div>
-            <ul class="list-group list-group-flush"> <!--Radio buttons for hand-tossed pizza-->
-                <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
-                <li class="list-group-item">
-                    <div class="hand-crust-group">
-                        <input class="hand-crust-input" type="radio" name="small-hand-crust" id="sm-hand-crust">
-                        <label class="hand-crust-label" for="sm-hand-crust">Small (10")</label>
-                    </div>
-                </li>
-                <li class="list-group-item">
-                    <div class="hand-crust-group">
-                        <input class="hand-crust-input" type="radio" name="medium-hand-crust" id="med-hand-crust">
-                        <label class="hand-crust-label" for="med-hand-crust">Medium (12")</label>
-                    </div>
-                </li>
-            </ul>
-            </div>
-            <div class="m-3 card">
-                <div class="card-header">
-                    Crispy Thin
-                </div>
-                <ul class="list-group list-group-flush"> <!--Radio buttons for thin-crust pizza-->
-                    <li class="list-group-item">Thin enough for optimum crispy to crunchy ratio.</li>
-                    <li class="list-group-item">
-                        <div class="thin-crust-group">
-                            <input class="thin-crust-input" type="radio" name="medium-thin-crust" id="med-thin-crust">
-                            <label class="thin-crust-label" for="med-thin-crust">Medium (12")</label>
+            <div class="m-3 card">  <!--  Card for hand-tossed options-->
+                <div class="card-header">Hand Tossed</div>
+                <ul class="list-group list-group-flush"> <!--Radio buttons for hand-tossed pizza-->
+                    <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
+                    <li class="list-group-item"> <!-- Small hand-tossed pizza radio button-->
+                        <div class="hand-crust-group">
+                            <input class="hand-crust-input" type="radio" name="small-hand-crust" id="sm-hand-crust">
+                            <label class="hand-crust-label" for="sm-hand-crust">Small (10")</label>
                         </div>
                     </li>
-                    <li class="list-group-item">
-                        <div class="thin-crust-group">
-                            <input class="thin-crust-input" type="radio" name="large-thin-crust" id="lg-thin-crust">
-                            <label class="thin-crust-label" for="lg-thin-crust">Large (14")</label>
+                    <li class="list-group-item"> <!-- Medium hand-tossed pizza radio button-->
+                        <div class="hand-crust-group">
+                            <input class="hand-crust-input" type="radio" name="medium-hand-crust" id="med-hand-crust">
+                            <label class="hand-crust-label" for="med-hand-crust">Medium (12")</label>
                         </div>
                     </li>
                 </ul>
             </div>
-            <div class="card"> <!--Footer and blue button for next step-->
-                <div class="card-footer d-flex">
-                    <a href="#"><button type="button" class="btn btn-primary ms-auto p-2 bd-highlight">Next Step</button></a>
-                </div>
-            </div>
-
-
-    <!-- 2nd tab - Cheese and Crust-->
-            <div class="card d-grid gap-3 tab pane fade" id="cheese-and-sauce-tab">
-                <div class="card bg-primary text-white">
-                    <div id="cheese-and-sauce-card" class="card-body"> <!--   Card for description of choices-->
-                        Choose Size and Crust.
-                    </div>
-                </div>
-            </div>
-
-
-
-
         </div>
+    </div>
+    <div class="m-3 card">  <!--  Card for thin-style options-->
+        <div class="card-header">Crispy Thin</div>
+            <ul class="list-group list-group-flush"> <!--Radio buttons for thin-crust pizza-->
+                <li class="list-group-item">Thin enough for optimum crispy to crunchy ratio.</li>
+                <li class="list-group-item"> <!-- Medium thin pizza radio button-->
+                    <div class="thin-crust-group">
+                        <input class="thin-crust-input" type="radio" name="medium-thin-crust" id="med-thin-crust">
+                        <label class="thin-crust-label" for="med-thin-crust">Medium (12")</label>
+                    </div>
+                </li>
+               <li class="list-group-item"> <!-- Large thin pizza radio button-->
+                    <div class="thin-crust-group">
+                        <input class="thin-crust-input" type="radio" name="large-thin-crust" id="lg-thin-crust">
+                        <label class="thin-crust-label" for="lg-thin-crust">Large (14")</label>
+                    </div>
+                </li>
+            </ul>
+    </div>
+    <div class="card"> <!--Footer and blue button for next step-->
+        <div class="card-footer d-flex">
+            <a href="#"><button type="button" class="btn btn-primary ms-auto p-2 bd-highlight">Next Step</button></a>
+        </div>
+    </div>
 </div>
+
+<!--Second pane -> Cheese and Sauce Tab-->
+
+    <div class="tab-pane fade" id="cheese-and-sauce-tab" role="tabpanel" aria-labelledby="cheese-tab">...2
+
+
+
+
+
+
+    </div>
+    <div class="tab-pane fade" id="toppings-tab" role="tabpanel" aria-labelledby="top-tab">...3</div>
+</div>
+
+
+<!--    Cards for Customization of pizza-->
+
+
+<!--<div class="tab-content">-->
+<!--        <div class="tab-pane show fade active" id="size-and-crust-tab">-->
+<!--            <div class="card d-grid gap-3">-->
+<!--            <div class="card bg-primary text-white">-->
+<!--             <div id="size-and-crust-card" class="card-body"> &lt;!&ndash;   Card for description of choices&ndash;&gt;-->
+<!--                    Choose Size and Crust.-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="m-3 card">-->
+<!--            <div class="card-header">-->
+<!--                Hand Tossed-->
+<!--            </div>-->
+<!--            <ul class="list-group list-group-flush"> &lt;!&ndash;Radio buttons for hand-tossed pizza&ndash;&gt;-->
+<!--                <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>-->
+<!--                <li class="list-group-item">-->
+<!--                    <div class="hand-crust-group">-->
+<!--                        <input class="hand-crust-input" type="radio" name="small-hand-crust" id="sm-hand-crust">-->
+<!--                        <label class="hand-crust-label" for="sm-hand-crust">Small (10")</label>-->
+<!--                    </div>-->
+<!--                </li>-->
+<!--                <li class="list-group-item">-->
+<!--                    <div class="hand-crust-group">-->
+<!--                        <input class="hand-crust-input" type="radio" name="medium-hand-crust" id="med-hand-crust">-->
+<!--                        <label class="hand-crust-label" for="med-hand-crust">Medium (12")</label>-->
+<!--                    </div>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--            </div>-->
+<!--            <div class="m-3 card">-->
+<!--                <div class="card-header">-->
+<!--                    Crispy Thin-->
+<!--                </div>-->
+<!--                <ul class="list-group list-group-flush"> &lt;!&ndash;Radio buttons for thin-crust pizza&ndash;&gt;-->
+<!--                    <li class="list-group-item">Thin enough for optimum crispy to crunchy ratio.</li>-->
+<!--                    <li class="list-group-item">-->
+<!--                        <div class="thin-crust-group">-->
+<!--                            <input class="thin-crust-input" type="radio" name="medium-thin-crust" id="med-thin-crust">-->
+<!--                            <label class="thin-crust-label" for="med-thin-crust">Medium (12")</label>-->
+<!--                        </div>-->
+<!--                    </li>-->
+<!--                    <li class="list-group-item">-->
+<!--                        <div class="thin-crust-group">-->
+<!--                            <input class="thin-crust-input" type="radio" name="large-thin-crust" id="lg-thin-crust">-->
+<!--                            <label class="thin-crust-label" for="lg-thin-crust">Large (14")</label>-->
+<!--                        </div>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            </div>-->
+<!--            <div class="card"> &lt;!&ndash;Footer and blue button for next step&ndash;&gt;-->
+<!--                <div class="card-footer d-flex">-->
+<!--                    <a href="#"><button type="button" class="btn btn-primary ms-auto p-2 bd-highlight">Next Step</button></a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            </div>-->
+
+
+<!--    &lt;!&ndash; 2nd tab - Cheese and Crust&ndash;&gt;-->
+<!--            <div class="tab pane fade" id="cheese-and-sauce-tab">-->
+<!--                <div class="card d-grid gap-3">-->
+<!--                    <div class="card bg-primary text-white">-->
+<!--                        <div id="cheese-and-sauce-card" class="card-body"> &lt;!&ndash;   Card for description of choices&ndash;&gt;-->
+<!--                            Choose Size and Crust.-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+
+
+
+<!--        </div>-->
+<!--</div>-->
 
 
 </body>
