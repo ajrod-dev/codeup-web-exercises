@@ -1,0 +1,28 @@
+.jumbotron{
+    background-image: url('../img/pizza.png');
+    height: 346px;
+    background-size: cover;
+
+}
+
+.container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    max-width: 100%;
+
+}
+
+#title-bar {
+    font-size: 2em;
+    text-align: center;
+}
+
+h2 {
+    padding: 15px 0 5px 5px;
+}
+
+.nav-tab {
+    display: inline-block;
+}

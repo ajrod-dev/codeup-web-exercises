@@ -1,0 +1,11 @@
+.container {
+    display:flex
+}
+
+.box {
+    background-color: green;
+    width: 200px;
+    height: 200px;
+    box-sizing: border-box;
+
+}
