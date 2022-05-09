@@ -126,8 +126,8 @@
             </div>
             <!--Footer and blue button for next step-->
             <div class="card">
-                <div class="card-footer d-flex">
-                    <a href="#"><button type="button" class="btn btn-primary ms-auto p-2 bd-highlight">Next Step</button></a>
+                <div class="card-footer">
+                    <a href="#"><button type="button" class="btn btn-primary p-2 float-end">Next Step</button></a>
                 </div>
             </div>
         </div>
@@ -146,30 +146,124 @@
                 <div class="card-header">Cheese</div>
                 <ul class="list-group list-group-flush"> <!--Dropdown for Cheese amount-->
                     <li class="list-group-item">How Much?</li>
-
+                </ul>
+                <button type="button" class="btn btn-light dropdown-toggle text-start m-3" data-bs-toggle="dropdown" aria-expanded="false">
+                    Normal
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><button class="dropdown-item" type="button">Normal</button></li>
+                    <li><button class="dropdown-item" type="button">Extra</button></li>
+                    <li><button class="dropdown-item" type="button">Light</button></li>
                 </ul>
             </div>
             <div class="m-3 card">
                 <div class="card-header">Sauce</div>
-                <ul class="dropdown-menu">
-                    <li><h6 class="dropdown-header">What Type?</h6></li>
-                    <li><a class="dropdown-item" href="#">Normal</a></li>
-                    <li><a class="dropdown-item" href="#">Extra</a></li>
-                </ul>
                     <!--                    Enter dropdown here-->
-
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">What Type?</li>
+                </ul>
+                <button type="button" class="btn btn-light dropdown-toggle text-start m-3" data-bs-toggle="dropdown" aria-expanded="false">
+                    Tomato
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><button class="dropdown-item" type="button">Marinara</button></li>
+                    <li><button class="dropdown-item" type="button">Alfredo</button></li>
+                </ul>
+                <ul class="list-group list-group-flush"> <!--Dropdown for Cheese amount-->
+                    <li class="list-group-item">How Much?</li>
+                </ul>
+                <button type="button" class="btn btn-light dropdown-toggle text-start m-3" data-bs-toggle="dropdown" aria-expanded="false">
+                    Normal
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><button class="dropdown-item" type="button">Normal</button></li>
+                    <li><button class="dropdown-item" type="button">Extra</button></li>
+                    <li><button class="dropdown-item" type="button">Light</button></li>
+                </ul>
 
             </div>
         </div>
-
-
-
-
-
-
+        <!--Footer and blue button for next step-->
+        <div class="card">
+            <div class="card-footer">
+                <a href="#"><button type="button" class="btn btn-primary p-2 float-end">Next Step</button></a>
+            </div>
+        </div>
 
     </div>
-    <div class="tab-pane fade" id="toppings-tab" role="tabpanel" aria-labelledby="top-tab">...3</div>
+    <div class="tab-pane fade" id="toppings-tab" role="tabpanel" aria-labelledby="top-tab">
+        <div class="card d-grid gap-3">
+            <div class="card bg-primary text-white">
+                <div class="card-body">
+                    Choose Toppings.
+                </div>
+            </div>
+            <div class="m-3 card">
+                <div class="card-header">Choose Meats</div>
+                    <ul class="list-group list-group-flush"> <!--Checkbox buttons for beef topping on pizza-->
+                        <li class="list-group-item">
+                            <div class="toppings-group">
+                                <input class="toppings-input" type="checkbox" name="beef-topping" id="beef-topping">
+                                <label class="toppings-label" for="beef-topping">Beef</label>
+                            </div>
+                        </li>
+                        <li class="list-group-item"> <!-- Checkbox for ham toppings-->
+                            <div class="toppings-group">
+                                <input class="toppings-input" type="checkbox" name="ham-topping" id="ham-topping">
+                                <label class="toppings-label" for="ham-topping">Ham</label>
+                            </div>
+                        </li>
+                        <li class="list-group-item"> <!-- Checkbox for philly steak-->
+                            <div class="toppings-group">
+                                <input class="toppings-input" type="checkbox" name="philly-topping" id="philly-topping">
+                                <label class="toppings-label" for="philly-topping">Philly Steak</label>
+                            </div>
+                        </li>
+                        <li class="list-group-item"> <!-- Checkbox for bacon topping-->
+                            <div class="toppings-group">
+                                <input class="toppings-input" type="checkbox" name="bacon-topping" id="bacon-topping">
+                                <label class="toppings-label" for="bacon-topping">Bacon</label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            <div class="m-3 card">
+                <div class="card-header">Choose Non-Meats</div> <!-- Checkboxes for Non-meats-->
+                <ul class="list-group list-group-flush"> <!--Checkbox for green peppers topping-->
+                    <li class="list-group-item">
+                        <div class="toppings-group">
+                            <input class="toppings-input" type="checkbox" name="green-peppers-topping" id="green-peppers-topping">
+                            <label class="toppings-label" for="green-peppers-topping">Green Peppers</label>
+                        </div>
+                    </li>
+                    <li class="list-group-item"> <!-- Checkbox for mushrooms topping-->
+                        <div class="toppings-group">
+                            <input class="toppings-input" type="checkbox" name="mushrooms-topping" id="mushrooms-topping">
+                            <label class="toppings-label" for="mushrooms-topping">Mushrooms</label>
+                        </div>
+                    </li>
+                    <li class="list-group-item"> <!-- Checkbox for onions topping-->
+                        <div class="toppings-group">
+                            <input class="toppings-input" type="checkbox" name="onions-topping" id="onions-topping">
+                            <label class="toppings-label" for="onions-topping">Onions</label>
+                        </div>
+                    </li>
+                    <li class="list-group-item"> <!-- Checkbox for jalapenos topping-->
+                        <div class="toppings-group">
+                            <input class="toppings-input" type="checkbox" name="jalapenos-topping" id="jalapenos-topping">
+                            <label class="toppings-label" for="jalapenos-topping">Jalapeno Peppers</label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            </div>
+        <!--Footer and blue button for next step-->
+        <div class="card">
+            <div class="card-footer">
+                <a href="#"><button type="button" class="btn btn-primary p-2 float-end">Checkout</button></a>
+            </div>
+        </div>
+    </div>
 
 </div>
 

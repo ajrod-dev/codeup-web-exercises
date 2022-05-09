@@ -110,3 +110,57 @@ let product3 = {
     console.log(returnProductEssentialDetails(product3))
     console.log(returnAllProductEssentialDetails(arrayOfObjs))
 
+
+// Write a function that accepts an array and returns the tallest object from array
+
+const hamsters = [
+    {
+        name: "Hamtaro",
+        heightInMM: 86,
+        fur: ['orange', 'white'],
+        gender: "male",
+        dateOfBirth: "August 6"
+    } , {
+        name: "Bijou",
+        heightInMM: 75,
+        fur: ['white'],
+        gender: "female",
+        dateOfBirth: "July 10"
+    } , {
+        name: "Oxnard",
+        heightInMM: 100,
+        fur: ['grey', 'white'],
+        gender: "male",
+        dateOfBirth: "May 3"
+    } , {
+        name: "Boss",
+        heightInMM: 120,
+        fur: ['brown', 'white'],
+        gender: "male",
+        dateOfBirth: "Spetember 21"
+    } , {
+        name: "Snoozer",
+        heightInMM: 85,
+        fur: ['brown', 'white', "pink"],
+        gender: "male",
+        dateOfBirth: "January 14"
+    }
+];
+
+function whoIsTallest(arr){
+    let height = 0;
+    let newArr = [];
+    let result = {};
+    arr.forEach(function (el) {
+       newArr.push(el.heightInMM)
+    })
+    height = Math.max(...newArr)
+    arr.forEach(function (el) {
+        if(height === el.heightInMM){
+            result = el;
+        }
+    })
+    return result;
+}
+
+console.log(whoIsTallest(hamsters));
