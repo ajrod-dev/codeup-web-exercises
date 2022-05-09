@@ -95,11 +95,11 @@
      */
 
     let books = [
-        {title: '12 Rules For Life', author: {firstName: 'Jordan', lastName: 'Peterson'}},
-        {title: 'Mortality', author: {firstName: 'Christopher', lastName: 'Hitchens'}},
-        {title: 'Waking Up', author: {firstName: 'Sam', lastName: 'Harris'}},
-        {title: 'Sapiens: A Brief History of Humankind', author: {firstName: 'Yuval', lastName: 'Harari'}},
-        {title: 'Skin In The Game', author: {firstName: 'Nassim', lastName: 'Taleb'}}
+        {title: '12 Rules For Life', author: {firstName: 'Jordan', lastName: 'Peterson'}, keywords: ['Self-help','Psychology'], available: true},
+        {title: 'Mortality', author: {firstName: 'Christopher', lastName: 'Hitchens'}, keywords: ['Religious-Skepticism','Current Events'], available: true},
+        {title: 'Waking Up', author: {firstName: 'Sam', lastName: 'Harris'}, keywords: ['Religious-Skepticism','Spirituality'], available: true},
+        {title: 'Sapiens: A Brief History of Humankind', author: {firstName: 'Yuval', lastName: 'Harari'}, keywords: ['NonFiction'], available: true},
+        {title: 'Skin In The Game', author: {firstName: 'Nassim', lastName: 'Taleb'}, keywords: ['Non-Fiction'], available: true}
     ]
     console.log(books[0].title + " by " + books[0].author.firstName + " " + books[0].author.lastName)
 

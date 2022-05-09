@@ -1202,6 +1202,8 @@
         }
 
 
+
+
     }
 
     console.log("Array of balances" + "\n")
@@ -1293,6 +1295,8 @@
     dog.bark()
     dog.vaccinate('canine parvovirus')
     console.log(dog)
+
+
 
 
 
