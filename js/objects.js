@@ -94,13 +94,66 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
+    let bookObj = {
+        title: "",
+        author: {
+            firstName: "",
+            lastName: ""
+        },
+        keywords: [""],
+        available: false,
+        dateAvailable: "",
+        lend: function () {
+
+        }
+    }
+
     let books = [
-        {title: '12 Rules For Life', author: {firstName: 'Jordan', lastName: 'Peterson'}, keywords: ['Self-help','Psychology'], available: true},
-        {title: 'Mortality', author: {firstName: 'Christopher', lastName: 'Hitchens'}, keywords: ['Religious-Skepticism','Current Events'], available: true},
-        {title: 'Waking Up', author: {firstName: 'Sam', lastName: 'Harris'}, keywords: ['Religious-Skepticism','Spirituality'], available: true},
-        {title: 'Sapiens: A Brief History of Humankind', author: {firstName: 'Yuval', lastName: 'Harari'}, keywords: ['NonFiction'], available: true},
-        {title: 'Skin In The Game', author: {firstName: 'Nassim', lastName: 'Taleb'}, keywords: ['Non-Fiction'], available: true}
+        {
+            title: '12 Rules For Life',
+            author: {
+                firstName: 'Jordan',
+                lastName: 'Peterson'},
+            keywords: ['Self-help','Psychology'],
+            available: true,
+            dateAvailable: new Date('May 11, 2022 12:15:00')},
+        {
+            title: 'Mortality',
+            author: {
+                firstName: 'Christopher',
+                lastName: 'Hitchens'},
+            keywords: ['Religious-Skepticism','Current Events'],
+            available: true,
+            dateAvailable: new Date('May 26, 2022 12:15:00')},
+        {
+            title: 'Waking Up',
+            author: {
+                firstName: 'Sam',
+                lastName: 'Harris'},
+            keywords: ['Religious-Skepticism','Spirituality'],
+            available: true,
+            dateAvailable: new Date('June 01, 2022 12:15:00')},
+        {
+            title: 'Sapiens: A Brief History of Humankind',
+            author: {
+                firstName: 'Yuval',
+
+                lastName: 'Harari'}, keywords: ['NonFiction'],
+            available: true,
+            dateAvailable: new Date('July 02, 2022 12:15:00')},
+        {
+            title: 'Skin In The Game',
+            author: {
+                firstName: 'Nassim',
+                lastName: 'Taleb'},
+            keywords: ['Non-Fiction'],
+            available: true,
+            dateAvailable: new Date('July 05, 2022 12:15:00')}
     ]
+    let newBook = {title: "1-Page Marketing Plan", author: {firstName: "Allan", lastName: "Dib"}, keywords: ['business','marketing'],
+        available: true, dateAvailable:"May 11, 2022 12:15:00"};
+
+    books.push(newBook)
     console.log(books[0].title + " by " + books[0].author.firstName + " " + books[0].author.lastName)
 
     /**
