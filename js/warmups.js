@@ -162,5 +162,40 @@ function whoIsTallest(arr){
     })
     return result;
 }
-
+console.log("Tallest hamster: ")
 console.log(whoIsTallest(hamsters));
+
+// Accept an array of objects and return the object from the array that is the most colorful
+
+function mostColorful(arr){
+    let result = {fur: []};
+    for (let hamster of arr){
+        if(hamster.fur.length > result.fur.length){
+            result = hamster;
+            }
+        }
+        return result;
+}
+console.log("Most colorful hamster: ")
+console.log(mostColorful(hamsters))
+
+// Write  a function that will accept a string , it should return an object with the following properties: string, size, containsLetterFromRSTLNE, and isOneWord
+
+function makeObjectFromString(str){
+    let lower = str.toLowerCase()
+    let containsLetters = false;
+    if(lower.includes('r') || lower.includes('s')  || lower.includes('t')  || lower.includes('l') || lower.includes('n') || lower.includes('e')){
+        containsLetters = true;
+    }
+    let oneWord = !str.includes(" ");
+    let result = {
+        string: str,
+        size: str.length,
+        containsLettersFromRSTLNE: containsLetters,
+        isOneWord: oneWord
+    };
+    return result;
+
+}
+console.log(makeObjectFromString('tacocat'))
+console.log(makeObjectFromString('John Jacob'))
