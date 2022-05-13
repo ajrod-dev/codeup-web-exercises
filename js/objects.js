@@ -104,7 +104,15 @@
         available: false,
         dateAvailable: "",
         lend: function () {
-
+            if(this.available === true) {
+                this.available = false;
+                let targetDate = new Date();
+                targetDate.setDate(targetDate.getDate() + 14);
+                let dd = targetDate.getDate();
+                let mm = targetDate.getMonth() + 1; // 0 is January, so we must add 1
+                let yyyy = targetDate.getFullYear();
+                this.dateAvailable = mm + "/" + dd + "/" + yyyy;
+            }
         }
     }
 
