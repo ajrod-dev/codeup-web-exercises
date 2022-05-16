@@ -25,34 +25,85 @@
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
 
+<button id="btn1" style="height: 40px; width: 80px; margin: 15px">Button #1</button>
+<button id="btn2" style="height: 40px; width: 80px; margin: 15px">Button #2</button>
+<button id="btn3" style="height: 40px; width: 80px; margin: 15px">Button #3</button>
+<button id="btn4" style="height: 40px; width: 80px; margin: 15px">Button #4</button>
+
+<div>
+    <p id="counter"></p>
+</div>
+
+
 <script>
     (function() {
         "use strict";
         // TODO: Uncomment next line and get the main header element by id
-            let mainHeader = document.getElementById("main-header");
-
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-            mainHeader.innerHTML=("Javascript is Cool")
+
+        document.getElementById("btn1").addEventListener("click", function (){
+                document.getElementById("main-header").innerHTML = ("JavaScript is Cool")
+            });
+
         // TODO: Uncomment the next line and get the sub header element by id
-            let subHeader = document.getElementById("sub-header");
-
         // TODO: Set the text color of subHeader to blue
-            subHeader.style.color = "#0000FF"
-        // TODO: Uncomment the next line and get all list items
-            let listItems = document.getElementsByTagName("li")
 
+        document.getElementById("btn2").addEventListener("click", function () {
+               document.getElementById("sub-header").style.color = "#0000FF";
+           });
+
+        // TODO: Uncomment the next line and get all list items
         // TODO: Set text color on every other list item to grey
-        for(let i = 1; i < listItems.length; i+= 2){
-            listItems[i].style.color = "#808080"
-        }
         // TODO: Set text color of li with dbid = 1 to blue
-            document.querySelector("[data-dbid='1']").style.color = "#0000FF"
+
+        document.getElementById("btn3").addEventListener("click", function () {
+                let listItems = document.getElementsByTagName("li")
+                for(let i = 1; i < listItems.length; i+= 2){
+                    listItems[i].style.color = "#808080"
+                    document.querySelector("[data-dbid='1']").style.color = "#0000FF"
+                }
+            });
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-            let subParagraphs = document.getElementsByClassName("sub-paragraph")[0];
-            subParagraphs.innerHTML = "Mission Accomplished!"
-
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+
+        document.getElementById("btn4").addEventListener("click", function (){
+                let subParagraphs = document.getElementsByClassName("sub-paragraph")[0];
+                subParagraphs.innerHTML = "Mission Accomplished!"
+            });
+
+        // Extra DOM Exercises
+        // 1. When a user hits the "g" key, the background of the page should turn purple.
+        document.addEventListener("keypress", function () {
+            if(event.code === "KeyG") {
+                document.body.style.backgroundColor = "#A020F0"
+            }
+        })
+
+        // 2. Every time the enter key is pressed, increment and display a counter that shows the total number of times the enter key has been pressed.
+        let counter = 0;
+        document.addEventListener("keypress", function () {
+            while(event.key === "Enter"){
+                counter++;
+                document.getElementById("counter").innerHTML = "Counter: " + counter
+                console.log("Counter: " + counter)
+                break;
+            }
+        })
+
+        // 3. When someone types 1, 2, 3 in a row, show an alert that says "You get a 50% discount!".
+        let arr = ['1','2','3']
+        let userInput = new Array( arr.length );
+
+        document.addEventListener("keypress", function ({key}) {
+            userInput = [ ...userInput.slice( 1 ), key ];
+            if ( arr.every( ( v, k ) => v === userInput[ k ] ) ) {
+                alert( 'You get a 50% discount!' );
+            }
+        })
+
+
+
     })();
 </script>
 </body>
