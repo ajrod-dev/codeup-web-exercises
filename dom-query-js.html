@@ -94,7 +94,6 @@
         // 3. When someone types 1, 2, 3 in a row, show an alert that says "You get a 50% discount!".
         let arr = ['1','2','3']
         let userInput = new Array( arr.length );
-
         document.addEventListener("keypress", function ({key}) {
             userInput = [ ...userInput.slice( 1 ), key ];
             if ( arr.every( ( v, k ) => v === userInput[ k ] ) ) {
