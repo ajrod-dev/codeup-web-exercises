@@ -65,6 +65,10 @@
 
 
 </div>
+
+<br>
+
+
 <script>
 
   // TODO: Prompt the user to enter a color. Select the first div with the class of "question", and change the font color to the users input.
@@ -86,6 +90,34 @@
     let color = document.getElementById("color").value
     document.body.style.backgroundColor = color;
   })
+
+  // 1. Create a button with the id of addTodo. Create an input of type text with the id of "todo"
+  // 2. Create an unordered list with the id="todosList"
+  // 4. When the add button is clicked:
+  //       a. Make it such that the value from the input is added to a list items.
+  //          example: <li>input</li> inside of <ul>
+  //       b. Reset the value in the addTodos input.
+  // 5. If the value for the input is empty. Prevent it from creating another <li> element
+
+
+  let todoSubmit = document.getElementById('addTodo')
+  let todoInput = document.getElementById('todo')
+  let todoList = document.getElementById('todosList')
+  let todoValue;
+  let listItem;
+  let textNode;
+
+  todoSubmit.addEventListener('click', function () {
+    todoValue = todoInput.value;
+    if(todoValue !== ""){
+      textNode = document.createTextNode(todoValue)
+      listItem = document.createElement('li')
+      listItem.appendChild(textNode)
+      todoList.appendChild(listItem)
+      todoInput.value = ""
+    }
+  })
+
 </script>
 </body>
 </html>
