@@ -10,8 +10,55 @@
 <script>
 
 $(function () {
-      alert("DOM has finished loading.");
-  });
+    // Adding elements
+    $('body').append('<div>')
+    $('div').append('<h1>JQuery Practice</h1>')
+    $('div').append('<p>Sub-Paragraph</p>')
+    $('div').append('<ul>List</ul>')
+    $('ul').append('<li>First Item</li>')
+
+    // Adding Classes to elements
+    $('div').addClass('container')
+    $('h1').addClass('codeup')
+    $('p').addClass('codeup')
+    $('ul').addClass('list')
+    $('li').addClass('codeup')
+
+    // Adding Ids to elements
+    $('.container').attr('id', 'my-container')
+    $('h1').attr('id', 'my-header')
+    $('p').attr('id', 'my-paragraph')
+    $('.list').attr('id', 'my-list')
+    $('li').attr('id', 'my-list-item')
+
+    // Select an element by ID and alert contents
+    // alert($('#my-header').html())
+    // alert($('#my-list').text())
+
+    // Using jQuery, create a border around all elements with the class codeup that is 1 pixel wide and red.
+    $('.codeup').css({border: '1px solid red'})
+
+    // Using jQuery, set the font-size of all li elements to 20px.
+    $('#my-list').css("font-size", "20px");
+
+    // Craft selectors that highlight all the h1, p, and li elements.
+    // $('.codeup').css("backgroundColor", "yellow")
+
+    // Create a jQuery statement to alert the contents of your h1 element(s).
+    alert($('#my-header').html())
+
+    // Combine your selectors that highlight all the h1, p, and li elements.
+    $('h1, p, li').css("backgroundColor", "yellow")
+
+
+
+
+
+
+
+
+
+});
 
 </script>
 
