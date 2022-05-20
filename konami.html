@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+</head>
+<body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+    body {
+        background: no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    .centered {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 72%;
+        height: 142px;
+        border: solid 2px black;
+        border-radius: 10%;
+        opacity: 0.7;
+
+    }
+
+    .centeredMessage {
+        display: block;
+        margin: auto;
+        width: 72%;
+        height: 100px;
+        background-color: white;
+        color: black;
+        border-radius: 40%;
+        text-align: center;
+        border: 5px solid #FFFF00;
+        padding: 50px 0;
+    }
+
+    .invisible {
+        visibility: hidden;
+    }
+
+    h3 {
+        margin: auto;
+
+    }
+
+    .btnSound {
+        margin: auto;
+
+    }
+</style>
+<script>
+    $(() => {
+        "use strict";
+        $('body').append('<div>')
+        // $('div').addClass('main')
+        // $('main').append('<img>')
+        // $('img').addClass('centered').addClass('invisible')
+        // $('img').css("backgroundImage", "url('img/konami-logo.png')")
+
+        // $('main').append('<div>')
+        // $('div:nth-of-type(2)').addClass('centeredMessage')
+        // $('.centeredMessage').append('<h3>')
+        $('h3').text('Konami has awarded you 30 lives! Congrats!')
+
+        let konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13]
+        let keysArr = new Array( konamiCode.length );
+        $(document).keyup(function (e) {
+            keysArr = [ ...keysArr.slice(1), e.keyCode ];
+            console.log(keysArr)
+            if ( konamiCode.every( ( v, k ) => v === keysArr[ k ] ) ) {
+                $('body').css("background-image", "url('img/pixelArt.gif')")
+                $('img').toggleClass('invisible')
+                $('h3').toggleClass('invisible')
+
+            }
+        })
+
+    })
+
+</script>
+
+<div class="main">
+    <img class="centered invisible" src="img/konami-logo.png">
+    <h3 style=' margin: auto; color: white; font-family: "Helvetica Neue", sans-serif; font-size: 25px; text-align: center; justify-self: center' class="invisible ">Konami has awarded you with 30 lives! Congrats!</h3>
+
+
+</div>
+</body>
+</html>
