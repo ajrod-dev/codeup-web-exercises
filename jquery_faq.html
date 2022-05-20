@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery FAQ</title>
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(() => {
+
+        $('body').append('<div>')
+        $('div').addClass('main')
+        // Header
+        $('.main').append('<h1>')
+        $('h1').text('National Parks FAQ')
+        // Start of Description List
+        $('.main').append('<dl>')
+        $('dl').addClass('faq-list')
+        // Adding 10 List Items
+        for(let i = 1; i < 11; i++) {
+            $('.faq-list').append('<dt>').append('<dd>')
+        }
+        // Adding IDs to each detail title
+        $('dt:nth-of-type(1)').attr('id', ('detail-title-1'))
+        $('dt:nth-of-type(2)').attr('id', ('detail-title-2'))
+        $('dt:nth-of-type(3)').attr('id', ('detail-title-3'))
+        $('dt:nth-of-type(4)').attr('id', ('detail-title-4'))
+        $('dt:nth-of-type(5)').attr('id', ('detail-title-5'))
+        $('dt:nth-of-type(6)').attr('id', ('detail-title-6'))
+        $('dt:nth-of-type(7)').attr('id', ('detail-title-7'))
+        $('dt:nth-of-type(8)').attr('id', ('detail-title-8'))
+        $('dt:nth-of-type(9)').attr('id', ('detail-title-9'))
+        $('dt:nth-of-type(10)').attr('id', ('detail-title-10'))
+
+        // Adding IDs to each detail title
+        $('dd:nth-of-type(1)').attr('id', ('detail-description-1'))
+        $('dd:nth-of-type(2)').attr('id', ('detail-description-2'))
+        $('dd:nth-of-type(3)').attr('id', ('detail-description-3'))
+        $('dd:nth-of-type(4)').attr('id', ('detail-description-4'))
+        $('dd:nth-of-type(5)').attr('id', ('detail-description-5'))
+        $('dd:nth-of-type(6)').attr('id', ('detail-description-6'))
+        $('dd:nth-of-type(7)').attr('id', ('detail-description-7'))
+        $('dd:nth-of-type(8)').attr('id', ('detail-description-8'))
+        $('dd:nth-of-type(9)').attr('id', ('detail-description-9'))
+        $('dd:nth-of-type(10)').attr('id', ('detail-description-10'))
+
+        // Adding FAQs Content
+        // #1
+        $('#detail-title-1').text('Who is the director of the National Park Service?\n')
+        $('#detail-description-1').text('Charles F. "Chuck" Sams III is the Director of the National Park Service.\n' +
+            '\n')
+        // #2
+        $('#detail-title-2').text('What government agency oversees the National Park Service?\n')
+        $('#detail-description-2').text('The National Park Service is a bureau of the Department of the Interior. Directly overseeing its operation is the departments Assistant Secretary for Fish, Wildlife and Parks.')
+        // #3
+        $('#detail-title-3').text('How many employees are in the National Park Service?\n')
+        $('#detail-description-3').text('Permanent, temporary, and seasonal employees: Approximately 20,000 Volunteers: More than 279,000 in 2019')
+        // #4
+        $('#detail-title-4').text('How old is the National Park System?\n')
+        $('#detail-description-4').text('The National Park Service was created by an act signed by President Woodrow Wilson on August 25, 1916. Yellowstone National Park was established by an act signed by President Ulysses S. Grant on March 1, 1872, as the nations first national park. View the National Park System timeline.')
+        // #5
+        $('#detail-title-5').text('What is the origin of the National Park Service arrowhead?\n')
+        $('#detail-description-5').text('The arrowhead was authorized as the official National Park Service emblem by the Secretary of the Interior on July 20, 1951.')
+        // #6
+        $('#detail-title-6').text('How many areas are in the National Park System?\n')
+        $('#detail-description-6').text('The system includes 423 areas covering more than 85 million acres in every state, the District of Columbia, American Samoa, Guam, Puerto Rico, and the Virgin Islands. These areas include national parks, monuments, battlefields, military parks, historical parks, historic sites, lakeshores, seashores, recreation areas, scenic rivers and trails, and the White House. ')
+        // #7
+        $('#detail-title-7').text('What is the largest national park site? Smallest?\n')
+        $('#detail-description-7').text('Largest: Wrangell-St. Elias National Park and Preserve, AK, at 13.2 million acres \nSmallest: Thaddeus Kosciuszko National Memorial, PA, at 0.02 acres')
+        // #8
+        $('#detail-title-8').text('How many people visit the national parks?\n')
+        $('#detail-description-8').text('Total recreation visitors to the national parks in 2021: 297,115,406.')
+        // #9
+        $('#detail-title-9').text('What is the National Park Service budget?\n')
+        $('#detail-description-9').text('Fiscal Year (FY) 2014 Enacted: $2.98 billion \nFY 2015 Enacted: $2.615 billion\nFY 2016 Enacted:$2.851 billion\nFY 2017 Enacted: $2.932 billion')
+        // #10
+        $('#detail-title-10').text('What is the most-visited national park?\n')
+        $('#detail-description-10').text('View a list of the most-visited sites in the National Park Service')
+        $('#detail-description-10').attr('href', 'https://www.nps.gov/aboutus/visitation-numbers.htm')
+
+        // Adding classes to each item and modifying css
+        $('dd').addClass('invisible')
+        $('.invisible').css({visibility: 'hidden'})
+
+
+
+    })
+
+</script>
+
+</body>
+</html>
