@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>JQuery FAQ</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
 </head>
 <body>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
     $(() => {
@@ -48,7 +54,7 @@
         // Adding FAQs Content
         // #1
         $('#detail-title-1').text('1. Who is the director of the National Park Service?\n')
-        $('#detail-description-1').text(' - Charles F. "Chuck" Sams III is the Director of the National Park Service.\n')
+        $('#detail-description-1').text(' - Charles F. "Chuck" Sams III is the Director of the National Park Service.\n');
 
         // #2
         $('#detail-title-2').text('2. What government agency oversees the National Park Service?\n')
@@ -81,20 +87,21 @@
 
         // Adding classes to each item and modifying css
         $('dd').addClass('invisible')
-        $('.invisible').css({visibility: 'hidden'})
+        // $('.invisible').css({visibility: 'hidden'})
 
         // Link to toggle class 'invisible'
         $('.main').append('<p>')
-        $('p').addClass('toggleLink').text('Show')
+        $('p').addClass('toggleLink').text('Hide')
 
         $('.toggleLink').click((e) => {
             e.preventDefault();
-            $('dd').toggle('invisible')
+            $('.toggleLink').text('Show')
+            $('.invisible').toggle('invisible')
         })
 
-
-
-
+        $('dt').click(function () {
+            $(this).toggleClass('highlight')
+        })
 
     })
 
