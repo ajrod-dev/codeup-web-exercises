@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapbox</title>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+<div id='map' style='width: 95vw; height: 75vh; margin: auto'></div>
+<h1 id="place"></h1>
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js'></script>
+<script src="js/keys.js"></script>
+<script src="js/geocode-utils.js"></script>
+<script>
+  mapboxgl.accessToken = MAPBOX_API_KEY;
+  const map = new mapboxgl.Map({
+    container: 'map', // container ID
+    style: 'mapbox://styles/mapbox/streets-v11', // style URL
+    center: [-98.49 , 29.42 ], // starting position [lng, lat]
+    zoom: 9 // starting zoom
+  });
+  // Create a new marker.
+  const marker = new mapboxgl.Marker()
+      .setLngLat([-98.4895813842879, 29.426822443983507 ])
+          .setDraggable(true)
+          .addTo(map)
+      ;
+
+  const POPUP = new mapboxgl.Popup().setHTML("Codeup is a coding bootcamp that teaches students full-stack development in 5 months.")
+
+  marker.setPopup(POPUP)
+
+  geocode("22202 Estate Hill Dr, San Antonio, TX 78258", MAPBOX_API_KEY).then(function (data) {
+      console.log(data)
+      const POPUP_HOME = new mapboxgl.Popup()
+          .setLngLat(data).setHTML("<p>This is my residence</p>")
+          .addTo(map)
+  })
+
+  reverseGeocode({lat: 52.3353, lng: 4.8659}, MAPBOX_API_KEY).then(function (data) {
+      console.log(data)
+  })
+
+  let LONG_LAT = []
+
+  marker.on("dragend", function () {
+      LONG_LAT = marker.getLngLat();
+      document.getElementById("place").innerHTML = "Longitude: " + LONG_LAT.lng + " , Latitude: " + LONG_LAT.lat
+      map.flyTo({center: [LONG_LAT.lng , LONG_LAT.lat]})
+      reverseGeocode(LONG_LAT, MAPBOX_API_KEY).then(function (data) {
+          document.getElementById("place").innerHTML = data
+      })
+  })
+</script>
+</body>
+</html>
