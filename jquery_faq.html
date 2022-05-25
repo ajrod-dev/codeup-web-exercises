@@ -131,9 +131,9 @@
             // $('ul').each(function(){
             //     $('li').last().css('background-color', 'yellow')
             // })
-            $('#yosemite').children().last().css('background-color', 'yellow')
-            $('#zion').children().last().css('background-color', 'yellow')
-            $('#yellowstone').children().last().css('background-color', 'yellow')
+            $('ul').each(function () {
+                $(this).children().last().css("background", 'yellow')
+            })
         })
 
         // h3 clicked
@@ -143,7 +143,7 @@
 
         // any li clicked turns first li blue
         $('li').click(function () {
-            $(this).parent().children().first().next().css('color', 'blue')
+            $(this).parent().children().next().first().css('color', 'blue')
         })
 
 

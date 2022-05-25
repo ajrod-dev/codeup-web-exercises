@@ -17,6 +17,7 @@
 </head>
 
 <body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <h1>Lets practice DOM!</h1>
 
@@ -129,7 +130,15 @@
   // use that button to stop and restart the h1 tags from changing size.
 
 
+  // DOM Question #4
 
+  // When the mouse enters the content area of the 4th div with the class of "question", an alert should pop up
+  // that reads "CONGRATULATIONS ON YOUR NEW CRUISE!";
+
+  let question = $('.question:nth-of-type(5)');
+  $(question.children('h1')).mouseenter(function () {
+    alert("CONGRATULATIONS ON YOUR NEW CRUISE!")
+  })
 
 
 </script>
