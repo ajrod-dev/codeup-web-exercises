@@ -1,0 +1,33 @@
+
+.grid-container {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: 100% repeat(4, 100px);
+    grid-template-rows: repeat(5, 50px);
+    grid-template-areas:
+            'header header'
+            'sidebar content';
+}
+
+.grid-item-1{
+    background-color: lightblue;
+    grid-area: header;
+}
+.grid-item-2{
+    background-color: lightblue;
+    grid-area: content;
+
+}
+.grid-item-3{
+    background-color: lightblue;
+    grid-area: header;
+}
+.grid-item-4{
+    background-color: lightblue;
+    grid-area: header;
+}
+.grid-item-5{
+    background-color: lightblue;
+    grid-area: header;
+}
+
