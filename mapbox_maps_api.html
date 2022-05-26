@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapbox</title>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet' />
+    <link href="css/mapbox-styles.css" rel="stylesheet"/>
+</head>
+<body>
+<div class='sidebar'>
+    <div class='heading'>
+        <h1>Favorite Restaurants</h1>
+    </div>
+    <div id='listings' class='listings'></div>
+</div>
+<div class='map' id='map'></div>
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js'></script>
+<script src="js/keys.js"></script>
+<script src="js/geocode-utils.js"></script>
+<script>
+
+
+    mapboxgl.accessToken = MAPBOX_API_KEY ;
+    const MAP = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/dark-v10',
+        zoom: 9,
+        center: [-98.49 , 29.42 ],
+        scrollZoom: true
+    })
+
+    const places = {
+        "type": "FeatureCollection",
+        "features": [
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -98.5880257503, 29.55816258026
+
+                    ]
+                },
+                "properties": {
+                    "name": "Carrabba's",
+                    "phoneFormatted": "(210) 694-4191",
+                    "phone": "2106944191",
+                    "address": "12507 I-10",
+                    "city": "San Antonio",
+                    "country": "United States",
+                    "postalCode": "78230",
+                    "state": "TX"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -98.5991869780, 29.6101127367
+
+                    ]
+                },
+                "properties": {
+                    "name": "Russo's Pizzeria",
+                    "phoneFormatted": "(210) 561-7616",
+                    "phone": "2105617616",
+                    "address": "17631 La Cantera Pkwy #102",
+                    "city": "San Antonio",
+                    "country": "United States",
+                    "postalCode": "78257",
+                    "state": "TX"
+                }
+            }
+        ]
+    }
+
+    places.features.forEach(function (place, i) {
+        place.properties.id = i;
+    })
+
+
+    function buildLocationList(restaurants) {
+        for (const store of restaurants.features) {
+            /* Add a new listing section to the sidebar. */
+            const listings = document.getElementById('listings');
+            const listing = listings.appendChild(document.createElement('div'));
+            /* Assign a unique `id` to the listing. */
+            listing.id = `listing-${store.properties.id}`;
+            /* Assign the `item` class to each listing for styling. */
+            listing.className = 'item';
+
+            /* Add the link to the individual listing created above. */
+            const link = listing.appendChild(document.createElement('a'));
+            link.href = '#';
+            link.className = 'title';
+            link.id = `link-${store.properties.id}`;
+            link.innerHTML = `${store.properties.name} - ${store.properties.address}`;
+            link.style.color = '#2F91E9'
+
+            /* Add details to the individual listing. */
+            const details = listing.appendChild(document.createElement('div'));
+            details.innerHTML = `${store.properties.city}`;
+            if (store.properties.phone) {
+                details.innerHTML += ` · ${store.properties.phoneFormatted}`;
+            }
+            if (store.properties.distance) {
+                const roundedDistance = Math.round(store.properties.distance * 100) / 100;
+                details.innerHTML += `<div><strong>${roundedDistance} miles away</strong></div>`;
+            }
+        }
+    }
+
+
+    MAP.on('load', () => {
+        /* Add the data to your map as a layer */
+
+        MAP.addLayer({
+            'id': 'locations',
+            'type': 'heatmap',
+            /* Add a GeoJSON source containing place coordinates and information. */
+            'source': {
+                type: 'geojson',
+                data: places
+            }
+        });
+        buildLocationList(places)
+    });
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
