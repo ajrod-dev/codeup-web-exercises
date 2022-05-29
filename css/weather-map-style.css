@@ -12,7 +12,7 @@ body {
     display: grid;
     grid-gap: 15px;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 60px 40px 300px 550px;
+    grid-template-rows: 50px 50px 310px 550px;
     justify-content: center;
     grid-auto-rows: minmax(200px, auto);
 }
@@ -21,6 +21,7 @@ h1 {
     font-size: 20px;
     font-family: "Helvetica Neue", sans-serif;
     font-weight: bold;
+    margin-left: 10px;
 }
 
 p {
@@ -30,10 +31,11 @@ p {
 }
 
 .grid-item {
-    background-color: #3A3A3A;
+    background-color: #242424;
     font-family: "Helvetica Neue", sans-serif;
     font-weight: bold;
-    border-radius: 10px;
+    border: 2px solid rgb(179, 179, 179);
+    border-radius: 5px;
 
 }
 

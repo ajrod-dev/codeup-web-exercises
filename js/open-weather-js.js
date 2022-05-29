@@ -3,8 +3,10 @@
 const URL = 'https://api.openweathermap.org/data/2.5/onecall'
 
 let currentDay = new Date()
+let currentCity = "San Antonio, US";
 
-geocode("San Antonio, US", MAPBOX_API_KEY).then(function (results) {
+
+geocode(currentCity, MAPBOX_API_KEY).then(function (results) {
     $.get(URL, {
         APPID: OPEN_WEATHER_API_KEY,
         lat: results[1],
@@ -59,6 +61,5 @@ geocode("San Antonio, US", MAPBOX_API_KEY).then(function (results) {
 
     })
 })
-
 
 
