@@ -11,31 +11,30 @@ body {
 .grid-container {
     display: grid;
     grid-gap: 15px;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 60px 250px 600px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 60px 40px 300px 550px;
     justify-content: center;
-    grid-auto-rows: minmax(150px, auto);
+    grid-auto-rows: minmax(200px, auto);
 }
 
 h1 {
-    font-size: 25px;
+    font-size: 20px;
     font-family: "Helvetica Neue", sans-serif;
     font-weight: bold;
-    margin-top: 8px;
 }
 
 p {
-    font-size: 20px;
+    font-size: 15px;
     font-family: "Helvetica Neue", sans-serif;
     font-weight: lighter;
 }
 
 .grid-item {
     background-color: #3A3A3A;
-    font-size: 25px;
     font-family: "Helvetica Neue", sans-serif;
     font-weight: bold;
     border-radius: 10px;
+
 }
 
 .grid-item1 {
@@ -43,7 +42,8 @@ p {
     grid-column-end: -1;
 }
 .grid-item2 {
-
+    grid-column-start: 1;
+    grid-column-end: -1;
 }
 
 .grid-item3 {
@@ -57,13 +57,28 @@ p {
 }
 
 .grid-item6 {
+
+}
+
+.grid-item7 {
+
+}
+
+.grid-item8 {
     grid-column-start: 1;
     grid-column-end: -1;
 }
 
-.grid-item7 {
-    grid-column-start: 1;
-    grid-column-end: -1;
+.grid-item>p{
+text-align: center;
+}
+
+.icon {
+    margin-left: 55px;
+}
+
+hr {
+    border-color: rgb(179, 179, 179);
 }
 
 
