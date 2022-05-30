@@ -12,7 +12,7 @@ body {
     display: grid;
     grid-gap: 15px;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 50px 50px 310px 550px;
+    grid-template-rows: 50px 40px 310px 550px;
     justify-content: center;
     grid-auto-rows: minmax(200px, auto);
 }
@@ -22,6 +22,15 @@ h1 {
     font-family: "Helvetica Neue", sans-serif;
     font-weight: bold;
     margin-left: 10px;
+    /*width: 950px*/
+}
+
+label {
+    font-size: 20px;
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-top: 20px;
 }
 
 p {
@@ -42,28 +51,12 @@ p {
 .grid-item1 {
     grid-column-start: 1;
     grid-column-end: -1;
+    display: flex;
+    justify-content: space-between;
 }
 .grid-item2 {
     grid-column-start: 1;
     grid-column-end: -1;
-}
-
-.grid-item3 {
-
-}
-.grid-item4 {
-
-}
-.grid-item5 {
-
-}
-
-.grid-item6 {
-
-}
-
-.grid-item7 {
-
 }
 
 .grid-item8 {
@@ -76,11 +69,19 @@ text-align: center;
 }
 
 .icon {
-    margin-left: 55px;
-}
+    justify-content: center;}
 
 hr {
     border-color: rgb(179, 179, 179);
 }
+
+.iconOuterDiv {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
 
 
