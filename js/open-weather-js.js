@@ -24,7 +24,6 @@ function getWeather(currentCity) {
             $('#humidity1').html("Humidity: " + results.current.humidity + '<br>')
             $('#wind1').html('Wind: ' + results.current.wind_speed + '<br>')
             $('#pressure1').html('Pressure: ' + results.current.pressure)
-            console.log(results)
             // Following Day Data - Day 2
             let day2 = new Date(currentDay.setDate(currentDay.getDate() + 1))
             $('#date2').html(day2.toLocaleDateString())
@@ -61,10 +60,27 @@ function getWeather(currentCity) {
             $('#humidity5').html("Humidity: " + results.daily[3].humidity + '<br>')
             $('#wind5').html('Wind: ' + results.daily[3].wind_speed + '<br>')
             $('#pressure5').html('Pressure: ' + results.daily[3].pressure)
+            // This code below makes the map move to the searched city
+            map.flyTo({
+                center: [results.lon, results.lat]
+            })
+            // Moves the marker to coordinates after search
+            marker.setLngLat({lon: results.lon,lat: results.lat})
+            .addTo(map)
+
+
+
+
+
 
         })
     })
 }
+// Marker instance
+const marker = new mapboxgl.Marker({
+    draggable: true
+})
+// Map instance
 mapboxgl.accessToken = MAPBOX_API_KEY;
 const map = new mapboxgl.Map({
     container: 'map', // container ID
@@ -73,16 +89,32 @@ const map = new mapboxgl.Map({
     zoom: 9 // starting zoom
 });
 
-$('#currentCity').html("Current City: " + currentCity)
-
+// Submit button to search for city weather forecast and overrides draggable function
 $('#searchSubmit').click(function (e) {
     e.preventDefault()
     currentCity = $('#searchPlace').val()
+    marker.remove()
     getWeather(currentCity)
     document.getElementById('searchPlace').value = '';
     $('#currentCity').html("Current City: " + currentCity)
 
 })
+// Marker is draggable and updates weather and map when finished dragging.
+marker.on('dragend', function () {
+    const lngLat = marker.getLngLat()
+    marker.remove()
+    reverseGeocode(lngLat, MAPBOX_API_KEY).then(function (data){
+        getWeather(data)
+        $('#currentCity').html("Current City: " + data)
+
+    })
+})
+// Current city label is updated or on default value at all times
+$('#currentCity').html("Current City: " + currentCity)
+
+
+
+
 
 
 

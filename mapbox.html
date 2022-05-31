@@ -39,20 +39,20 @@
           .addTo(map)
   })
 
-  reverseGeocode({lat: 52.3353, lng: 4.8659}, MAPBOX_API_KEY).then(function (data) {
-      console.log(data)
-  })
+  // reverseGeocode({lat: 52.3353, lng: 4.8659}, MAPBOX_API_KEY).then(function (data) {
+  //     console.log(data)
+  // })
 
   let LONG_LAT = []
 
-  marker.on("dragend", function () {
-      LONG_LAT = marker.getLngLat();
-      document.getElementById("place").innerHTML = "Longitude: " + LONG_LAT.lng + " , Latitude: " + LONG_LAT.lat
-      map.flyTo({center: [LONG_LAT.lng , LONG_LAT.lat]})
-      reverseGeocode(LONG_LAT, MAPBOX_API_KEY).then(function (data) {
-          document.getElementById("place").innerHTML = data
-      })
-  })
+  // marker.on("dragend", function () {
+  //     LONG_LAT = marker.getLngLat();
+  //     document.getElementById("place").innerHTML = "Longitude: " + LONG_LAT.lng + " , Latitude: " + LONG_LAT.lat
+  //     map.flyTo({center: [LONG_LAT.lng , LONG_LAT.lat]})
+  //     reverseGeocode(LONG_LAT, MAPBOX_API_KEY).then(function (data) {
+  //         document.getElementById("place").innerHTML = data
+  //     })
+  // })
 </script>
 </body>
 </html>
