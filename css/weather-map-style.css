@@ -80,6 +80,34 @@ hr {
     justify-content: center;
 }
 
+#searchPlace {
+    height: 25px;
+    margin-top: 5px;
+}
+
+#forSearchPlace {
+    margin-top: 5px;
+}
+
+#searchSubmit {
+    height: 25px;
+    margin-top: 5px;
+}
+
+/*#colorMode {*/
+/*    height: 25px;*/
+/*    margin-left: auto;*/
+/*    margin-bottom: 15px;*/
+/*}*/
+
+/*.outerDivButton {*/
+/*    display: flex;*/
+/*}*/
+
+/*.outerDivButton>button {*/
+/*    justify-items: flex-end;*/
+/*}*/
+
 
 
 

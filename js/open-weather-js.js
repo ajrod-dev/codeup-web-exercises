@@ -68,11 +68,6 @@ function getWeather(currentCity) {
             marker.setLngLat({lon: results.lon,lat: results.lat})
             .addTo(map)
 
-
-
-
-
-
         })
     })
 }
@@ -111,6 +106,7 @@ marker.on('dragend', function () {
 })
 // Current city label is updated or on default value at all times
 $('#currentCity').html("Current City: " + currentCity)
+
 
 
 
