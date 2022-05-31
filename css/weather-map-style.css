@@ -94,6 +94,14 @@ hr {
     margin-top: 5px;
 }
 
+@media (max-width: 500px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 50px) repeat(5, 290px) 500px;
+
+    }
+}
+
 /*#colorMode {*/
 /*    height: 25px;*/
 /*    margin-left: auto;*/
