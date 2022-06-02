@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3em;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.item {
+    width: 200px;
+    height: 200px;
+}
+
+#redBox {
+    background-color: indianred;
+}
+
+#blueBox {
+    background-color: lightblue;
+}
+
+#greenBox {
+    background-color: lightgreen;
+}
+
+#yellowBox {
+    background-color: lightgoldenrodyellow;
+
+}
+
+#container1 {
+    align-self: flex-end;
+    margin-top: 50px;
+    margin-bottom: 0
+
+}
+
+#container2 {
+    align-self: flex-start;
+    margin-bottom: 40px;
+    margin-top: 0;
+
+}
+
+.bottomText {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    text-align: center;
+}
+
+.currentRound {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    text-align: center;
+}
+
+#start-btn {
+    margin-left: 46%;
+}
+
