@@ -43,11 +43,11 @@ console.log(moreThanThree)
 
 // Use .map to create an array of strings where each element is a user's email address
 
-let arrOfStrings = users.map((user) => {
+let arrOfEmails = users.map((user) => {
     return user.email
 })
 
-console.log(arrOfStrings)
+console.log(arrOfEmails)
 
 // Use .reduce to get the total years of experience from the list of users. Once you get the total of years you can use the result to calculate the average.
 
@@ -55,18 +55,29 @@ let totalYears = users.reduce((total, person) => {
     return total += person.yearsOfExperience
 },0)
 
-console.log("Total years of experience: " + totalYears)
+let getAvg = () => {
+    return totalYears / users.length
+}
 
+console.log("Total years of experience: " + totalYears)
+console.log("Avg. # of years per user: " + getAvg())
 // Use .reduce to get the longest email from the list of users.
 
-let longestEmail = users.reduce((longest, person) => {
-    let result = ""
-    if(longest < person.email.length){
+let longestEmail = arrOfEmails.reduce((acc, curr) => {
+    return acc.length > curr.length ? acc : curr
+})
 
-    }
-    return result
-}, 0)
+console.log("Longest email is: " + longestEmail)
 
-console.log(longestEmail)
+// Use .reduce to get the list of user's names in a single string. Example: Your instructors are: ryan, luis, zach, fernando, justin.
+
+let listOfNames = users.map((user) => {
+    return user.name
+}).reduce((acc, curr) => {
+    return acc += ", " + curr
+})
+
+
+console.log("Your instructors are: " + listOfNames)
 
 
