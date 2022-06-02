@@ -78,6 +78,8 @@ let list = '<ul>';
 // TODO: rewrite the following loop to use a for..of loop
 for(let dev of developers) {
   // TODO: rewrite the assignment below to use template strings
-  list += `<li> developer </li>`;
+  list += `<li> ${dev} </li>`;
 }
 list += '</ul>';
+
+document.querySelector('body').innerHTML += list
