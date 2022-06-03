@@ -65,7 +65,7 @@ console.log("Avg. # of years per user: " + getAvg())
 
 let longestEmail = arrOfEmails.reduce((acc, curr) => {
     return acc.length > curr.length ? acc : curr
-})
+},"")
 
 console.log("Longest email is: " + longestEmail)
 
@@ -78,5 +78,14 @@ let listOfNamesTwo = users.reduce((prev, names) => {
 
 console.log("Your instructors are: " + listOfNamesTwo)
 
+
+// Bonus: Use .reduce to get the unique list of languages from the list of users.
+
+let uniques = users.reduce((user, curr) => {
+    return [...new Set((user += curr.languages + ",").split(','))]
+}, [])
+uniques.pop()
+console.log("Bonus for ES6: ")
+console.log(uniques)
 
 
