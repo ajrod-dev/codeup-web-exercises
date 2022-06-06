@@ -64,6 +64,39 @@ const family = [
     },
 ];
 
+const users = [
+    {
+        id: 1,
+        name: 'ryan',
+        email: 'ryan@codeup.com',
+        languages: ['clojure', 'javascript'],
+    },
+    {
+        id: 2,
+        name: 'luis',
+        email: 'luis@codeup.com',
+        languages: ['java', 'scala', 'php'],
+    },
+    {
+        id: 3,
+        name: 'zach',
+        email: 'zach@codeup.com',
+        languages: ['javascript', 'bash'],
+    },
+    {
+        id: 4,
+        name: 'fernando',
+        email: 'fernando@codeup.com',
+        languages: ['java', 'php', 'sql'],
+    },
+    {
+        id: 5,
+        name: 'justin',
+        email: 'justin@codeup.com',
+        languages: ['html', 'css', 'javascript', 'php'],
+    },
+];
+
 // Create an array of the first letters of each fruit
 
 let firstLetters = fruits.map(function (fruit) {
@@ -299,3 +332,107 @@ console.log('16.) Returns an array of objects with properties for the given stri
 console.log('Array provided: ' + arrayOfString)
 console.log('Result: ')
 console.log(returnArrayOfObjs(arrayOfString))
+console.log('_________________________________________')
+
+
+// Use .reduce to transform the users array into an object where the object's keys are ids and the values are objects that represent each user
+
+
+
+let usersObj = users.reduce((obj, user) => {
+    const { id } = user
+    return {...obj, [id] : {name: user.name, email: user.email, languages: user.languages}}
+}, {})
+
+console.log('17.) Return object where the object\'s keys are ids and the values are objects that represent each user: ')
+console.log('Array provided: ')
+console.log(users)
+console.log('Result: ')
+console.log(usersObj)
+console.log('_________________________________________')
+
+// given an array of names, use .reduce to produce a single string that contains everyone's name
+
+let names = ["Ben", "Jafar", "Matt", "Priya", "Brian"];
+
+let namesStr = names.reduce((str, name) => {
+    return str += name
+}, "")
+
+console.log('18.) use .reduce to produce a single string that contains everyone\'s name: ')
+console.log('Array provided: ')
+console.log(names)
+console.log('Result: ')
+console.log(namesStr)
+console.log('_________________________________________')
+
+
+
+// Reduce Problem #2: Sum up all of the numbers in the following array using .reduce
+
+let numbers = [1, 2, 3, 99, 1, -3, 1000, 0, 33, -67];
+
+let sumOfNumbers = numbers.reduce((total, num) => {
+    return total += num
+})
+
+console.log('19.) Sum up all of the numbers in the following array using .reduce: ')
+console.log('Array provided: ')
+console.log(numbers)
+console.log('Result: ')
+console.log(sumOfNumbers)
+console.log('_________________________________________')
+
+// Given the above array of numbers, write the .reduce necessary to determine the highest number of the array.
+
+let highestNumber = numbers.reduce((highest, num) => {
+    return highest > num ? highest : num
+})
+
+console.log('20.) Determine the highest number of the array: ')
+console.log('Array provided: ')
+console.log(numbers)
+console.log('Result: ')
+console.log(highestNumber)
+console.log('_________________________________________')
+
+// Given the above array of numbers, write the .reduce necessary to determine the lowest number of the array.
+
+let lowestNumber = numbers.reduce((lowest, num) => {
+    return lowest < num ? lowest : num
+})
+
+console.log('21.) Determine the lowest number of the array: ')
+console.log('Array provided: ')
+console.log(numbers)
+console.log('Result: ')
+console.log(lowestNumber)
+console.log('_________________________________________')
+
+// Given the array [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], use .reduce to determine the average of all the numbers
+
+let oneThruTen = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+let averageOfArray = oneThruTen.reduce((avg, num, i, arr) => {
+    return (avg += num)
+}) / oneThruTen.length
+
+console.log('22.) Determine the average of the numbers 1 - 10: ')
+console.log('Array provided: ')
+console.log(oneThruTen)
+console.log('Result: ')
+console.log(averageOfArray)
+console.log('_________________________________________')
+
+// Reduce problem #6, given the array of numbers from above, determine the average of all numbers
+
+let averageOfOriginalNums = numbers.reduce((avg, num) => {
+    return avg += num
+}) / numbers.length
+
+console.log('23.) Determine the average of the numbers array from above: ')
+console.log('Array provided: ')
+console.log(numbers)
+console.log('Result: ')
+console.log(averageOfOriginalNums)
+console.log('_________________________________________')

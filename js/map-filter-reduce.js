@@ -78,7 +78,6 @@ let listOfNamesTwo = users.reduce((prev, names) => {
 
 console.log("Your instructors are: " + listOfNamesTwo)
 
-
 // Bonus: Use .reduce to get the unique list of languages from the list of users.
 
 let uniques = users.reduce((user, curr) => {
